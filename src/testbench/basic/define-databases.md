@@ -2,7 +2,7 @@
 
 Package developer should be using `ServiceProvider::loadMigrationsFrom()` feature to automatically handle migrations for packages.
 
-## Automatically executing migrations
+## Automatically execute migrations
 
 Without any additional requirement you can either use `RefreshDatabase` or `DatabaseTransactions` trait:
 
@@ -22,7 +22,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-## Manually executing migrations
+## Manually execute migrations
 
 Instead of automatically migrate the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
 
