@@ -7,7 +7,7 @@ module.exports = [
   {
     title: "The Basic",
     collapsable: false,
-    children: prefix('basic', ['testcase', 'define-environment', 'define-routes']),
+    children: prefix('basic', ['testcase', 'define-environment', 'define-databases', 'define-routes']),
   },
   {
     title: "Troubleshooting",
