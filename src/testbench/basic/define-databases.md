@@ -37,7 +37,7 @@ protected function defineDatabaseMigrations()
     $this->artisan('migrate', ['--database' => 'testbench'])->run();
 
     $this->beforeApplicationDestroyed(function () {
-        $this->artisan('migrate:rollback')->run();
+        $this->artisan('migrate:rollback', ['--database' => 'testbench'])->run();
     });
 }
 ```
