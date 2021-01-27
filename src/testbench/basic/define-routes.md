@@ -36,7 +36,6 @@ public function it_does_load_auth_routes()
 
 /**
  * @test
- * @define-env usesSqliteConnection
  */
 public function it_doesnt_load_auth_routes()
 {
