@@ -1,6 +1,6 @@
 # Define Databases
 
-Package developer should be using `ServiceProvider::loadMigrationsFrom()` feature to automatically handle migrations for packages.
+Package developer should be either use `ServiceProvider::loadMigrationsFrom()` feature to automatically handle migrations for packages or define the migrations manually using the recommended guide below.
 
 ## Automatically execute migrations
 
