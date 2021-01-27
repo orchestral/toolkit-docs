@@ -12,6 +12,16 @@ To install through composer, run the following command from terminal:
 
     composer require --dev "orchestra/testbench"
 
+You can also setup Testbench to auto discover packages by updating `"scripts"` on the package `composer.json`:
+
+```json
+    "scripts": {
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+```
+
 ## Version Compatibility
 
  Laravel  | Testbench
