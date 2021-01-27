@@ -1,6 +1,6 @@
 # Define Databases
 
-Package developer should be either use `ServiceProvider::loadMigrationsFrom()` feature to automatically handle migrations for packages or define the migrations manually using the recommended guide below.
+It is recommended for package to use `ServiceProvider::loadMigrationsFrom()` feature (it automatically handle migrations for packages when used in Laravel applications and during tests) or you can define migrations specifically for tests environment using the recommended guide below.
 
 ## Automatically execute migrations
 

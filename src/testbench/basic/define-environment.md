@@ -28,7 +28,7 @@ Instead of `defineEnvironment()`, you can still use successor method `getEnviron
 
 ## Using Annotation
 
-You can also use `@define-env` annotation to customise use of `defineEnvironment()` specific for each test.
+You can also use `@define-env` annotation to customise use of `defineEnvironment()` for specific test.
 
 ```php
 protected function usesMySqlConnection($app) 
