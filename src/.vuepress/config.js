@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Toolkit',
+  title: 'Testbench Toolkit',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */

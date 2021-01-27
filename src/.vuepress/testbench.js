@@ -14,6 +14,10 @@ module.exports = [
     path: uri('commander')
   },
   {
+    title: "Integrations",
+    path: uri('integrations'),
+  },
+  {
     title: "Troubleshooting",
     path: uri('troubleshooting')
   },
