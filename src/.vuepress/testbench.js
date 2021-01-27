@@ -10,6 +10,10 @@ module.exports = [
     children: prefix('basic', ['testcase', 'define-environment', 'define-databases', 'define-routes']),
   },
   {
+    title: "CLI Commander",
+    path: uri('commander')
+  },
+  {
     title: "Troubleshooting",
     path: uri('troubleshooting')
   },
