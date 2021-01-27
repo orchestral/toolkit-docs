@@ -26,4 +26,15 @@ You can also utilise Collision with Testbench to use Laravel flavored artisan te
 composer require --dev "nunomaduro/collision"
 ```
 
+After installation complete and `package:discover` executed you should be able to use `package:test` command directly from Testbench CLI Commander:
+
+```
+./vendor/bin/testbench package:test
+```
+
 ![Collision Example](./img/collision-example.gif)
+
+:::tip Support for Parallel Testing 
+
+With `package:test` you are able to use `--parallel` options to use Parallel Testing. However do review [Laravel documentation](https://laravel.com/docs/8.x/testing#running-tests-in-parallel) regarding the subject.
+:::
