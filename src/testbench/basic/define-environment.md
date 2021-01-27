@@ -23,7 +23,7 @@ protected function defineEnvironment($app)
 
 :::tip Alias for getEnvironmentSetup()
 
-Instead of `defineEnvironment()`, you can still use original method `getEnvironmentSetup()`.
+Instead of `defineEnvironment()`, you can still use successor method `getEnvironmentSetup()`.
 :::
 
 ## Using Annotation
