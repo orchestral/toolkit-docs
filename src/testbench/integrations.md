@@ -38,3 +38,7 @@ After installation complete and `package:discover` executed you should be able t
 
 With `package:test` you are able to use `--parallel` options to use Parallel Testing. However do review [Laravel documentation](https://laravel.com/docs/8.x/testing#running-tests-in-parallel) regarding the subject.
 :::
+
+
+![Parallel Example](./img/parallel-example.gif)
+
