@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Testbench Toolkit',
+  title: 'Laravel Packages Toolkit',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
