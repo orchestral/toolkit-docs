@@ -5,13 +5,15 @@ Testbench 5 & 6 provides an experimental support for command line tool equivalen
 For example instead of refreshing the database on every tests you may now seed the database before running `phpunit`, using:
 
 ```
-./vendor/bin/testbench migrate
+composer exec testbench migrate
 ```
+
+> you can also execute it using `./vendor/bin/testbench`
 
 or, you can setup the application such as installing Passport:
 
 ```
-./vendor/bin/testbench passport:install
+composer exec testbench passport:install
 ```
 
 Both commands allows you to setup the testing environment where before you only able to setup manually on every `TestCase::setUp()`.
