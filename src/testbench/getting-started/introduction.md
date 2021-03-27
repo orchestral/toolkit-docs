@@ -17,7 +17,7 @@ You can also setup Testbench to auto discover packages by updating `"scripts"` o
 ```json
     "scripts": {
         "post-autoload-dump": [
-            "@php vendor/bin/testbench package:discover --ansi"
+            "@composer exec testbench package:discover --ansi"
         ]
     },
 ```
@@ -26,15 +26,7 @@ You can also setup Testbench to auto discover packages by updating `"scripts"` o
 
  Laravel  | Testbench
 :---------|:----------
- 5.0.x    | 3.0.x
- 5.1.x    | 3.1.x
- 5.2.x    | 3.2.x
- 5.3.x    | 3.3.x
- 5.4.x    | 3.4.x
- 5.5.x    | 3.5.x
- 5.6.x    | 3.6.x
- 5.7.x    | 3.7.x
- 5.8.x    | 3.8.x
+ 5.x.x    | 3.x.x
  6.x      | 4.x
  7.x      | 5.x
  8.x      | 6.x

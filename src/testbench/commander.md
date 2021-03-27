@@ -25,11 +25,15 @@ env:
   - DB_CONNECTION="mysql"
   - DB_USERNAME="homestead"
   - DB_PASSWORD="secret"
+
+providers:
+  - Laravel\Passport\PassportServiceProvider
 ```
 
 :::tip Notes and Considerations
 
-* The command is currently designed to help testing, however you might be able to run other feature to help package development such as running ide-helper:models etc.
+* The command is currently designed to help testing, however you might be able to run other feature to help package development such as running `ide-helper:models` etc.
 * The command wouldn't work for file stubbing as the generated file will be based on the booted Laravel application and not your package directories.
 * The command is an experimental feature and will only be likely to be marked as stable in Testbench 7. Please try it out and report back any issues.
 :::
+

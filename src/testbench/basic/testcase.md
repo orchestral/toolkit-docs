@@ -15,7 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 [[toc]]
 
-## Custom Service Providers
+## Package Service Providers
 
 To load your package service provider, override the `getPackageProviders`.
 
@@ -35,19 +35,19 @@ protected function getPackageProviders($app)
 }
 ```
 
-## Custom Aliases
+## Package Aliases
 
 To load your package alias, override the `getPackageAliases`.
 
 ```php
 /**
- * Get package aliases.
+ * Override application aliases.
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
  * @return array
  */
-protected function getPackageAliases($app)
+protected function overrideApplicationProviders($app)
 {
     return [
         'Acme' => 'Acme\Facade',
@@ -55,7 +55,28 @@ protected function getPackageAliases($app)
 }
 ```
 
-## Overriding setUp() method
+## Overriding Default Service Providers
+
+You can also override the default application using the following commands:
+
+```php
+/**
+ * Get package providers.
+ *
+ * @param  \Illuminate\Foundation\Application  $app
+ *
+ * @return array
+ */
+protected function overrideApplicationBindings($app)
+{
+    return [
+        'Illuminate\View\ViewServiceProvider' => 'Acme\ViewServiceProvider',
+    ];
+}
+```
+
+
+## Overriding Setup method
 
 Since `Orchestra\Testbench\TestCase` replace Laravel's `Illuminate\Foundation\Testing\TestCase`, if you need your own `setUp()` implementation, do not forget to call `parent::setUp()` and make sure proper declaration compatibility:
 

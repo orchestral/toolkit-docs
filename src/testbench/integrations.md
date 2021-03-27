@@ -29,7 +29,7 @@ composer require --dev "nunomaduro/collision"
 After installation complete and `package:discover` executed you should be able to use `package:test` command directly from Testbench CLI Commander:
 
 ```
-./vendor/bin/testbench package:test
+composer exec testbench package:test
 ```
 
 ![Collision Example](./img/collision-example.gif)
@@ -39,6 +39,6 @@ After installation complete and `package:discover` executed you should be able t
 With `package:test` you are able to use `--parallel` options to use Parallel Testing. However do review [Laravel documentation](https://laravel.com/docs/8.x/testing#running-tests-in-parallel) regarding the subject.
 :::
 
-
 ![Parallel Example](./img/parallel-example.gif)
 
+> Recommended minimum version to use parallel testing is `6.15.0`
