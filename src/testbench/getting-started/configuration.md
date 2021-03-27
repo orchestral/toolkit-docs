@@ -52,3 +52,15 @@ protected function getApplicationTimezone($app)
     return 'Asia/Kuala_Lumpur';
 }
 ```
+
+## File based Environment Variable
+
+By default Testbench doesn't load `.env` file when booting the application. You can change this by setting `TestCase::$loadEnvironmentVariables` property to `true`:
+
+```php
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+    protected $loadEnvironmentVariables = true;
+
+    //
+}  
