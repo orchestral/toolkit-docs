@@ -55,6 +55,38 @@ protected function overrideApplicationProviders($app)
 }
 ```
 
+## Package Auto-Discovery
+
+By default Testbench doesn't enable any package discovery autoloading when running tests, however you can change this to ignore specific package using:
+
+```php
+/**
+ * Ignore package discovery from.
+ *
+ * @return array
+ */
+public function ignorePackageDiscoveriesFrom()
+{
+    return ['laravel/passport'];
+}
+```
+
+You may also enable auto discovery for all vendor packages using the following:
+
+```php
+/**
+ * Ignore package discovery from.
+ *
+ * @return array
+ */
+public function ignorePackageDiscoveriesFrom()
+{
+    return [];
+}
+```
+
+> Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers)
+
 ## Overriding Default Service Providers
 
 You can also override the default application using the following commands:
@@ -76,7 +108,7 @@ protected function overrideApplicationBindings($app)
 ```
 
 
-## Overriding Setup method
+## Overriding `setUp()` method
 
 Since `Orchestra\Testbench\TestCase` replace Laravel's `Illuminate\Foundation\Testing\TestCase`, if you need your own `setUp()` implementation, do not forget to call `parent::setUp()` and make sure proper declaration compatibility:
 
