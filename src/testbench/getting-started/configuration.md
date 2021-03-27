@@ -1,6 +1,12 @@
 # Configuration
 
-Testbench utilised `phpunit.xml` configuration to setup environment variables value as global value for every tests:
+Testbench utilised `phpunit.xml` configuration to setup environment variables value as global value for every tests.
+
+[[toc]]
+
+## Application Key
+
+Most application would require `APP_KEY` to be defined in order to use encryption:
 
 ```xml
 <phpunit>
@@ -13,8 +19,6 @@ Testbench utilised `phpunit.xml` configuration to setup environment variables va
 
 </phpunit>
 ```
-
-[[toc]]
 
 ## In-Memory SQLite Connection
 
