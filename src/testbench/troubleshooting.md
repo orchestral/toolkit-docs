@@ -27,7 +27,7 @@ The reason Testbench remove all the classes is to make sure that you would never
 * Removed, moved to other location such as `App\Models\User`, or
 * Renamed using `php artisan app:name Acme` which would rename `App\User` to `Acme\User`.
 
-## Class 'GuzzleHttp\Client' not found
+## Class `GuzzleHttp\Client` not found
 
 If you plan to use the new **HTTP Client** in Laravel 7, you need to include `guzzlehttp/guzzle` to your package's `composer.json`:
 
@@ -35,7 +35,7 @@ If you plan to use the new **HTTP Client** in Laravel 7, you need to include `gu
 
 > We can't guarantee that any requirements in `laravel/laravel` will always be maintained as it is. Developer may remove any of the optional requirements such as `guzzlehttp/guzzle`, `fideloper/proxy`, `fruitcake/laravel-cors` or `laravel/tinker`.
 
-## Class 'Illuminate\Database\Eloquent\Factory' not found
+## Class `Illuminate\Database\Eloquent\Factory` not found
 
 Starting from Laravel 8, `Illuminate\Database\Eloquent\Factory` has been pushed to `laravel/legacy-factories` package in favor of class based Factories.
 

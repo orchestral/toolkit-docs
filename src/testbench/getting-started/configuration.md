@@ -53,7 +53,7 @@ protected function getApplicationTimezone($app)
 }
 ```
 
-## File based Environment Variable
+## Using `.env` Environment Variables
 
 By default Testbench doesn't load `.env` file when booting the application. You can change this by setting `TestCase::$loadEnvironmentVariables` property to `true`:
 
@@ -62,5 +62,22 @@ class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected $loadEnvironmentVariables = true;
 
-    //
+    // 
 }  
+```
+
+## Using Custom Laravel Skeleton
+
+By default Testbench provide a basic Laravel Skeleton, however you may have a requirement to use custom skeleton, you can do that using `getBasePath()` method.
+
+```php
+/**
+ * Get base path.
+ *
+ * @return string
+ */
+protected function getBasePath()
+{
+    return __DIR__.'/../skeleton';
+}
+```
