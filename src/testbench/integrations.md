@@ -53,7 +53,7 @@ composer require --dev "nunomaduro/collision"
 After installation complete and `package:discover` executed you should be able to use `package:test` command directly from Testbench CLI Commander:
 
 ```
-composer exec testbench package:test
+./vendor/bin/testbench package:test
 ```
 
 ![Collision Example](./img/collision-example.gif)
