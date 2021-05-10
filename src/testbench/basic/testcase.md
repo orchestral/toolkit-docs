@@ -47,7 +47,7 @@ To load your package alias, override the `getPackageAliases`.
  *
  * @return array
  */
-protected function overrideApplicationProviders($app)
+protected function getPackageAliases($app)
 {
     return [
         'Acme' => 'Acme\Facade',
