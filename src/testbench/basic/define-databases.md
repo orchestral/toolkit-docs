@@ -4,7 +4,7 @@ It is recommended for package to use `ServiceProvider::loadMigrationsFrom()` fea
 
 ## Automatically execute migrations
 
-By defaults you can use `RefreshDatabase` and just run package migrations define on the package's service provider.
+By defaults you can use the `RefreshDatabase` trait to *only* run package migrations defined through the package's service provider.
 
 ```php
 <?php
@@ -18,6 +18,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
     use RefreshDatabase;
 }
 ```
+
+If you also need to run the default Laravel migrations such as the `users` table migration, see the [Run Laravel Migrations](#run-laravel-migrations) section.
 
 ## Manually execute migrations
 
