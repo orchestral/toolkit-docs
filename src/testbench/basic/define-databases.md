@@ -4,10 +4,7 @@ It is recommended for package to use `ServiceProvider::loadMigrationsFrom()` fea
 
 ## Automatically execute migrations
 
-Without any additional requirement you can either use `RefreshDatabase` or `DatabaseTransactions` trait:
-
-* `Illuminate\Foundation\Testing\DatabaseTransactions`
-* `Illuminate\Foundation\Testing\RefreshDatabase`
+By defaults you can use `RefreshDatabase` and just run package migrations define on the package's service provider.
 
 ```php
 <?php
@@ -24,7 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Manually execute migrations
 
-Instead of automatically migrate the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
+Instead of just automatically migrate the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
 
 ```php
 /**
@@ -85,6 +82,23 @@ To run migrations that are only used for testing purposes and not part of your p
 protected function defineDatabaseMigrations()
 {
     $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+}
+```
+
+### Using Database Transactions
+
+You may also utilise `DatabaseTransactions` for migrated state using the following:
+
+```php
+<?php
+
+namespace Tests;
+
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+    use DatabaseTransactions;
 }
 ```
 
