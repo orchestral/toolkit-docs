@@ -159,3 +159,20 @@ protected function resolveApplicationHttpKernel($app)
     $app->singleton('Illuminate\Contracts\Http\Kernel', 'Tests\Http\Kernel');
 }
 ```
+
+## Testing blade components
+
+You can easily test blade components with Laravel's `Illuminate\Foundation\Testing\Concerns\InteractsWithViews` trait.
+
+```php
+<?php
+
+namespace Tests;
+
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+    use InteractsWithViews;
+}
+```
