@@ -25,7 +25,7 @@ To load your package service provider, override the `getPackageProviders`.
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
- * @return array
+ * @return array<int, string>
  */
 protected function getPackageProviders($app)
 {
@@ -45,7 +45,7 @@ To load your package alias, override the `getPackageAliases`.
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
- * @return array
+ * @return array<string, string>
  */
 protected function getPackageAliases($app)
 {
@@ -63,7 +63,7 @@ By default Testbench doesn't enable any package discovery autoloading when runni
 /**
  * Ignore package discovery from.
  *
- * @return array
+ * @return array<int, string>
  */
 public function ignorePackageDiscoveriesFrom()
 {
@@ -77,7 +77,7 @@ You may also enable auto discovery for all vendor packages using the following:
 /**
  * Ignore package discovery from.
  *
- * @return array
+ * @return array<int, array>
  */
 public function ignorePackageDiscoveriesFrom()
 {
@@ -97,7 +97,7 @@ You can also override the default application using the following commands:
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
- * @return array
+ * @return array<string, string>
  */
 protected function overrideApplicationBindings($app)
 {
