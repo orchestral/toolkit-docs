@@ -30,4 +30,5 @@ You can also setup Testbench to auto discover packages by updating `"scripts"` o
  6.x      | 4.x
  7.x      | 5.x
  8.x      | 6.x
+ 9.x      | 7.x
 
