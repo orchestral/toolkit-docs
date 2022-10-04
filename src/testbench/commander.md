@@ -1,6 +1,6 @@
 # CLI Commander
 
-Testbench 5 & 6 provides support for command line tool equivalent to `artisan` command where you can interact directly with the stub Laravel application. 
+Testbench provides support for command line tool equivalent to `artisan` command where you can interact directly with the stub Laravel application. 
 
 For example instead of refreshing the database on every tests you may now seed the database before running `phpunit`, using:
 
