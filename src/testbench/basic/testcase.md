@@ -85,7 +85,18 @@ public function ignorePackageDiscoveriesFrom()
 }
 ```
 
-> Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers)
+You can also enable auto discovery globally by setting the following property to your TestCase class:
+
+```php
+/**
+ * Automatically enables package discoveries.
+ *
+ * @var bool
+ */
+protected $enablesPackageDiscoveries = false;
+```
+
+> Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `./vendor/bin/testbench package:discover` command.
 
 ## Overriding Default Service Providers
 
