@@ -93,7 +93,7 @@ You can also enable auto discovery globally by setting the following property to
  *
  * @var bool
  */
-protected $enablesPackageDiscoveries = false;
+protected $enablesPackageDiscoveries = true;
 ```
 
 > Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `./vendor/bin/testbench package:discover` command.
