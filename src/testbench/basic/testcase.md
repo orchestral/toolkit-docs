@@ -25,7 +25,7 @@ To load your package service provider, override the `getPackageProviders`.
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
- * @return array<int, string>
+ * @return array<int, class-string<\Illuminate\Support\ServiceProvider>>
  */
 protected function getPackageProviders($app)
 {
@@ -45,7 +45,7 @@ To load your package alias, override the `getPackageAliases`.
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
- * @return array<string, string>
+ * @return array<string, class-string<\Illuminate\Support\Facades\Facade>>
  */
 protected function getPackageAliases($app)
 {
@@ -77,7 +77,7 @@ You may also enable auto discovery for all vendor packages using the following:
 /**
  * Ignore package discovery from.
  *
- * @return array<int, array>
+ * @return array<int, string>
  */
 public function ignorePackageDiscoveriesFrom()
 {
@@ -96,7 +96,7 @@ You can also enable auto discovery globally by setting the following property to
 protected $enablesPackageDiscoveries = true;
 ```
 
-> Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `./vendor/bin/testbench package:discover` command.
+> Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `php vendor/bin/testbench package:discover` command.
 
 ## Overriding Default Service Providers
 
@@ -108,7 +108,7 @@ You can also override the default application using the following commands:
  *
  * @param  \Illuminate\Foundation\Application  $app
  *
- * @return array<string, string>
+ * @return array<class-string<\Illuminate\Support\ServiceProvider>, class-string<\Illuminate\Support\ServiceProvider>>
  */
 protected function overrideApplicationBindings($app)
 {
