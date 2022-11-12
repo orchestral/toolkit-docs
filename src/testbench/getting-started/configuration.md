@@ -72,12 +72,29 @@ By default Testbench provide a basic Laravel Skeleton, however you may have a re
 
 ```php
 /**
- * Get base path.
+ * Get Application base path.
  *
  * @return string
  */
-protected function getBasePath()
+public static function applicationBasePath()
 {
     return __DIR__.'/../skeleton';
 }
 ```
+
+::: tip <code>applicationBasePath</code> Fallback
+
+The method was only introduced in `v6.22.0`, if you need to override Laravel Skeleton on project before the release then override `getBasePath` method instead:
+
+```php
+/**
+ * Get base path.
+ *
+ * @return string
+ */
+protected function getBasePath() 
+{
+    return __DIR__.'/../skeleton';
+}
+```
+:::

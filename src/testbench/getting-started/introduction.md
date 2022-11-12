@@ -17,7 +17,7 @@ You can also setup Testbench to auto discover packages by updating `"scripts"` o
 ```json
     "scripts": {
         "post-autoload-dump": [
-            "@php ./vendor/bin/testbench package:discover --ansi"
+            "@php vendor/bin/testbench package:discover --ansi"
         ]
     },
 ```
