@@ -96,7 +96,10 @@ You can also enable auto discovery globally by setting the following property to
 protected $enablesPackageDiscoveries = true;
 ```
 
-> Be aware that root package doesn't automate using package discovery and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `php vendor/bin/testbench package:discover` command.
+::: warning Root Package Discovery
+
+Be aware that root package doesn't automate using package discovery on any version below `v7.11.0` and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `php vendor/bin/testbench package:discover` command.
+:::
 
 ## Overriding Default Service Providers
 

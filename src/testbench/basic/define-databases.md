@@ -26,6 +26,8 @@ If you also need to run the default Laravel migrations such as the `users` table
 Instead of just automatically migrate the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
 
 ```php
+use function Orchestra\Testbench\artisan;
+
 /**
  * Define database migrations.
  *
@@ -33,11 +35,11 @@ Instead of just automatically migrate the database, you also manually configure 
  */
 protected function defineDatabaseMigrations()
 {
-    $this->artisan('migrate', ['--database' => 'testbench'])->run();
+    artisan($this, 'migrate', ['--database' => 'testbench']);
 
-    $this->beforeApplicationDestroyed(function () {
-        $this->artisan('migrate:rollback', ['--database' => 'testbench'])->run();
-    });
+    $this->beforeApplicationDestroyed(
+        fn () => artisan($this, 'migrate:rollback', ['--database' => 'testbench'])
+    );
 }
 ```
 
