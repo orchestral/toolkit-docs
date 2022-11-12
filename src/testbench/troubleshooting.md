@@ -31,7 +31,7 @@ The reason Testbench remove all the classes is to make sure that you would never
 
 If you plan to use the new **HTTP Client** in Laravel 7, you need to include `guzzlehttp/guzzle` to your package's `composer.json`:
 
-    composer require "guzzlehttp/guzzle:^6.3.1"
+    composer require "guzzlehttp/guzzle"
 
 > We can't guarantee that any requirements in `laravel/laravel` will always be maintained as it is. Developer may remove any of the optional requirements such as `guzzlehttp/guzzle`, `fideloper/proxy`, `fruitcake/laravel-cors` or `laravel/tinker`.
 
