@@ -106,7 +106,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-:::tip Notes and Considerations
+:::tip NOTES & CONSIDERATIONS
 
 * Your migration files has to suite Laravel's convention, e.g. `0000_00_00_000000_create_package_test_tables.php`.
 * You may choose to put your migrations folder in `tests/database/`.

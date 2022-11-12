@@ -84,7 +84,7 @@ public static function applicationBasePath()
 }
 ```
 
-::: tip <code>applicationBasePath</code> Fallback
+::: tip FALLBACK METHOD
 
 The method was only introduced in `v6.22.0`, if you need to override Laravel Skeleton on project before the release then override `getBasePath` method instead:
 

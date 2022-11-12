@@ -33,7 +33,10 @@ If you plan to use the new **HTTP Client** in Laravel 7, you need to include `gu
 
     composer require "guzzlehttp/guzzle"
 
-> We can't guarantee that any requirements in `laravel/laravel` will always be maintained as it is. Developer may remove any of the optional requirements such as `guzzlehttp/guzzle`, `fideloper/proxy`, `fruitcake/laravel-cors` or `laravel/tinker`.
+::: warning 
+
+We can't guarantee that any requirements in `laravel/laravel` will always be maintained as it is. Developer may remove any of the optional requirements such as `guzzlehttp/guzzle`, `fideloper/proxy`, `fruitcake/laravel-cors` or `laravel/tinker`.
+:::
 
 ## Class `Illuminate\Database\Eloquent\Factory` not found
 
@@ -41,7 +44,10 @@ Starting from Laravel 8, `Illuminate\Database\Eloquent\Factory` has been pushed 
 
 As package developers, you have the options to either split the package version for Laravel 8 from previous Laravel version and use the new class based Factories or require `laravel/legacy-factories` to make release while supporting lower versions as well. In both cases the packages will needs to require PHP 7.3 and above.
 
-> **Note:** The minimum PHP requirements is due to `laravel/legacy-factories` depending on `illuminate/macroable`.
+::: tip
+
+The minimum PHP requirements is due to `laravel/legacy-factories` depending on `illuminate/macroable`.
+:::
 
 In order to use legacy factories on packages development supporting Laravel 8 and below without splitting the release you can opt to use the following:
 
@@ -71,7 +77,6 @@ E.g: If you need to support minimum Laravel 5.6 here how the requirement should 
 ### Converted to new class based factories but still facing this error
 
 You need to check all your TestCase and ensure that there is no call to `$this->withFactories()`, autoloading class based factories is handled by Composer and `withFactories()` is only needed for legacy based factories.
-
 
 ## Missing Browser Kit support after testing on Laravel 5.4
 
