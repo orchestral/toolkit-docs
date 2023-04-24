@@ -3,6 +3,8 @@
 If you need to add something early in the application bootstrapping process (which executed between registering service providers and booting service providers) you could use the `defineEnvironment()` method:
 
 ```php
+use Illuminate\Contracts\Config\Repository;
+
 /**
  * Define environment setup.
  *
@@ -12,12 +14,20 @@ If you need to add something early in the application bootstrapping process (whi
 protected function defineEnvironment($app)
 {
     // Setup default database to use sqlite :memory:
-    $app['config']->set('database.default', 'testbench');
-    $app['config']->set('database.connections.testbench', [
-        'driver'   => 'sqlite',
-        'database' => ':memory:',
-        'prefix'   => '',
-    ]);
+    tap($app->make('config'), function (Repository $config) {
+        $config->set('database.default', 'testbench');
+        $config->set('database.connections.testbench', [
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
+        ]);
+        
+        // Setup queue database connections.
+        $config([
+            'queue.batching.database' => 'testbench',
+            'queue.failed.database' => 'testbench',
+        ]);
+    }
 }
 ```
 
