@@ -22,7 +22,7 @@ Most application would require `APP_KEY` to be defined in order to use encryptio
 
 ## In-Memory SQLite Connection
 
-To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) via setting it up under `defineEnvironment()` or by defining it under PHPUnit Configuration File:
+To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) by defining it under PHPUnit Configuration File:
 
 ```xml
 <phpunit>
@@ -35,6 +35,8 @@ To reduce setup configuration, you could use `testing` database connection (`:me
 
 </phpunit>
 ```
+
+Alternatively, you can also explicitly setting it up under `defineEnvironment()`.
 
 ## Application Timezone
 
