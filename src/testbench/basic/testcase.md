@@ -190,3 +190,44 @@ class TestCase extends \Orchestra\Testbench\TestCase
     use InteractsWithViews;
 }
 ```
+
+## Testing Controller with Inertia
+
+If one of your controllers returns an Inertia response, you need to follow these steps:
+
+1. Ensure that your HandleInertiaMiddleware is correctly registered.
+2. Create a new file named app.blade.php in your package's resources/views directory.
+3. Register the Inertia ServiceProvider in your BaseTest.
+4. In your setUp function, register the location of your dummy blade file.
+5. (Optional) Register a custom file finder to ensure that your pages are correctly resolved.
+
+```php
+use Inertia\ServiceProvider;
+
+class BaseTest extends TestCase
+{
+    protected function getPackageProviders($app)
+    {
+        return [
+            ServiceProvider::class,
+        ];
+    }
+
+    public function setUp(): void
+    {
+        View::addLocation('resources/views'); // or some custom path
+        // If you have custom page namespaces separated by '::', register them:
+        $this->app->bind('inertia.testing.view-finder', function ($app) {
+            $viewFinder = new \Illuminate\View\FileViewFinder(
+                $app['files'],
+                array_merge($app['config']->get('inertia.testing.page_paths'), ['path_to_your_pages']),
+                array_merge($app['config']->get('inertia.testing.page_extensions'), ['vue', 'js', 'jsx', 'ts', 'tsx', 'html', 'php'])
+            );
+            $viewFinder->addNamespace('WD', 'UI/resources/app/Pages');
+
+            return $viewFinder;
+        });
+    }
+}
+    
+``` 
