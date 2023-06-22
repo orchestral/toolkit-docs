@@ -27,7 +27,7 @@ protected function defineEnvironment($app)
             'queue.batching.database' => 'testbench',
             'queue.failed.database' => 'testbench',
         ]);
-    }
+    });
 }
 ```
 
