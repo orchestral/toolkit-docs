@@ -64,5 +64,3 @@ With `package:test` you are able to use `--parallel` options to use Parallel Tes
 :::
 
 ![Parallel Example](./img/parallel-example.gif)
-
-> Recommended minimum version to use parallel testing is `6.15.0`
