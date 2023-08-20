@@ -10,13 +10,10 @@ This error would only occur if your test suite require usages of the encrypter. 
 
 ```xml
 <phpunit>
-
     // ...
-
     <php>
         <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
     </php>
-
 </phpunit>
 ```
 
@@ -31,7 +28,9 @@ The reason Testbench remove all the classes is to make sure that you would never
 
 If you plan to use the new **HTTP Client** in Laravel 7, you need to include `guzzlehttp/guzzle` to your package's `composer.json`:
 
-    composer require "guzzlehttp/guzzle"
+```bash
+composer require "guzzlehttp/guzzle"
+```
 
 ::: warning 
 
@@ -51,7 +50,9 @@ The minimum PHP requirements is due to `laravel/legacy-factories` depending on `
 
 In order to use legacy factories on packages development supporting Laravel 8 and below without splitting the release you can opt to use the following:
 
-    composer require --dev "laravel/legacy-factories:^1.0.4"
+```bash
+composer require --dev "laravel/legacy-factories:^1.0.4"
+```
 
 Next you need to ensure `orchestra/testbench` uses the minimum version supporting `laravel/legacy-factories` to avoid issues on CI environment (if you're running tests on each version of Laravel or using `--prefer-lowest`).
 
