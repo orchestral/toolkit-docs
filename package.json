@@ -1,20 +1,20 @@
 {
-  "name": "testbench-docs",
+  "name": "toolkit-docs",
   "version": "0.0.1",
-  "description": "Documentation for Orchestra Testbench",
+  "description": "Documentation for Packages Toolkit for Laravel",
   "main": "index.js",
   "authors": {
     "name": "Mior Muhammad Zaki",
     "email": "crynobone@gmail.com"
   },
-  "repository": "https://github.com/orchestral/testbench-docs",
+  "repository": "https://github.com/orchestral/toolkit-docs",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "license": "MIT",
-  "dependencies": {
-    "vuepress": "^1.5.3"
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.4"
   }
 }
