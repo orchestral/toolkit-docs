@@ -7,13 +7,13 @@ Testbench hopes to provide a complete solution for package developments, in late
 Starting from Testbench 6.10 you may now use Ray debugging tool directly when running tests. 
 
 ```php
-    /** @test */
-    public function it_can_resolve_domain_route()
-    {
-        $response = $this->get('http://api.localhost/hello');
+/** @test */
+public function it_can_resolve_domain_route()
+{
+    $response = $this->get('http://api.localhost/hello');
 
-        ray($response);
-    }
+    ray($response);
+}
 ```
 
 ![Ray Example](./img/ray-example.png)
@@ -46,14 +46,14 @@ You can configure Ray using `phpunit.xml`:
 
 You can also utilise Collision with Testbench to use Laravel flavored artisan test command, including parallel testing. First of all include `nunomaduro/collision` to your package:
 
-```
+```bash
 composer require --dev "nunomaduro/collision"
 ```
 
 After installation complete and `package:discover` executed you should be able to use `package:test` command directly from Testbench CLI Commander:
 
-```
-php vendor/bin/testbench package:test
+```bash
+vendor/bin/testbench package:test
 ```
 
 ![Collision Example](./img/collision-example.gif)
