@@ -18,6 +18,12 @@ You can install **Testbench** using the following command:
 composer require --dev "orchestra/testbench"
 ```
 
+Next, you can run the following command to scaffold your package with the recommended setup:
+
+```bash
+vendor/bin/testbench workbench:install
+```
+
 ### Version Compatibility
 
  Laravel  | Testbench | Recommended Versions
@@ -36,6 +42,12 @@ You can install **Testbench Dusk** using the following command:
 
 ```bash
 composer require --dev "orchestra/testbench-dusk"
+```
+
+Next, you can run the following command to scaffold your package with the recommended setup:
+
+```bash
+vendor/bin/testbench workbench:install
 ```
 
 ### Version Compatibility
@@ -71,12 +83,22 @@ composer require --dev "orchestra/canvas"
 
 Testbench Core provides the full testing API and CLI `testbench` binary which is being used by **Testbench**, **Testbench Dusk** and **Workbench**. This component is accessible via `orchestra/testbench` without any further requirement.
 
+### Version Compatibility
+
+ Laravel  | Testbench Core   
+:---------|:-----------
+ 8.x      | 6.x
+ 9.x      | 7.x
+ 10.x     | 8.x
+
 ## Workbench
 
 Workbench provides a set of configurable actions and commands to allow preview, interacting and serving your Laravel's packages during development. This component is accessible via `orchestra/testbench` without any further requirement.
 
-### Installing
+### Version Compatibility
 
-```bash
-vendor/bin/testbench workbench:install
-```
+ Laravel  | Workbench   
+:---------|:-----------
+ 8.x      | -
+ 9.x      | 0.1.x
+ 10.x     | 0.1.x

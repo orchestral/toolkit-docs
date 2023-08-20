@@ -11,6 +11,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 [[toc]]
 
+## Installation
+
+Refer to the [Getting Started](../getting-started#testbench) documentation.
+
 ## Package Service Providers
 
 To load your package service provider, override the `getPackageProviders`.

@@ -4,14 +4,14 @@ Testbench provides support for command line tool equivalent to `artisan` command
 
 For example instead of refreshing the database on every tests you may now seed the database before running `phpunit`, using:
 
-```
-php vendor/bin/testbench migrate
+```bash
+vendor/bin/testbench migrate
 ```
 
 or, you can setup the application such as installing Passport:
 
-```
-php vendor/bin/testbench passport:install
+```bash
+vendor/bin/testbench passport:install
 ```
 
 Both commands allows you to setup the testing environment where before you only able to setup manually on every `TestCase::setUp()`.
@@ -19,13 +19,13 @@ Both commands allows you to setup the testing environment where before you only 
 In order for the `testbench` command to understand any required service providers or environment variables to be used when executing the "artisan" command you need to add the following `testbench.yaml` file on the project root directory.
 
 ```yaml
+providers:
+  - Laravel\Passport\PassportServiceProvider
+
 env:
   - DB_CONNECTION="mysql"
   - DB_USERNAME="homestead"
   - DB_PASSWORD="secret"
-
-providers:
-  - Laravel\Passport\PassportServiceProvider
 ```
 
 ::: details NOTES & CONSIDERATIONS
@@ -34,3 +34,6 @@ providers:
 * The command wouldn't work for file stubbing as the generated file will be based on the booted Laravel application and not your package directories.
 :::
 
+::: warning `env` limitation
+The `env` environment variables is only applied when using the CLI and will not be used when running tests.
+:::
