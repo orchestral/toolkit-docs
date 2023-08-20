@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Packages Toolkit",
+  title: "Packages Toolkit for Laravel",
   description: "Documentation for Canvas, Testbench and Workbench",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
