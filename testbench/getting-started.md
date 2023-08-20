@@ -10,16 +10,16 @@ Before going through the rest of this documentation, please take some time to re
 
 To install through composer, run the following command from terminal:
 
-    composer require --dev "orchestra/testbench"
+```bash
+composer require --dev "orchestra/testbench"
+```
 
-You can also setup Testbench to auto discover packages by updating `"scripts"` on the package `composer.json`:
+## Setup
 
-```json
-    "scripts": {
-        "post-autoload-dump": [
-            "@php vendor/bin/testbench package:discover --ansi"
-        ]
-    },
+Next, to setup the default `"scripts"` in `composer.json` and setup **Workbench** for the package you can run the following command:
+
+```bash
+vendor/bin/testbench workbench:install
 ```
 
 ## Version Compatibility
