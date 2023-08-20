@@ -1,7 +1,7 @@
 {
   "name": "toolkit-docs",
   "version": "0.0.1",
-  "description": "Documentation for Laravel Packages Toolkit",
+  "description": "Documentation for Packages Toolkit for Laravel",
   "main": "index.js",
   "authors": {
     "name": "Mior Muhammad Zaki",

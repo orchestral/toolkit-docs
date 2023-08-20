@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Laravel Packages Toolkit",
+  title: "Packages Toolkit",
   description: "Documentation for Canvas, Testbench and Workbench",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -16,13 +16,13 @@ export default defineConfig({
         text: 'Getting Started',
         link: 'getting-started',
         items: [
-          // { text: 'Installing', link: 'getting-started' },
+          { text: 'Configuration', link: 'getting-started/configuration' },
         ],
       },
       {
         text: 'Testbench',
         items: [
-          { text: 'Installation', link: 'getting-started#testbench' },
+          { text: 'Introduction', link: 'getting-started#testbench' },
           {
             text: 'The Basic',
             link : '/testbench/the-basic',
@@ -39,7 +39,13 @@ export default defineConfig({
         ],
       },
       // { text: 'Testbench Dusk', items: [] },
-      // { text: 'Workbench', items: [] }
+      {
+        text: 'Workbench',
+        items: [
+          { text: 'Introduction', link: 'getting-started#workbench' },
+          { text: 'Configuration', link: 'getting-started/configuration#workbench-configuration' },
+        ],
+      },
     ],
 
     socialLinks: [

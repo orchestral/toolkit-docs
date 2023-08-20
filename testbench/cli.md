@@ -1,4 +1,4 @@
-# CLI Commander
+# Command-line Interface
 
 Testbench provides support for command line tool equivalent to `artisan` command where you can interact directly with the stub Laravel application. 
 
@@ -15,18 +15,6 @@ vendor/bin/testbench passport:install
 ```
 
 Both commands allows you to setup the testing environment where before you only able to setup manually on every `TestCase::setUp()`.
-
-In order for the `testbench` command to understand any required service providers or environment variables to be used when executing the "artisan" command you need to add the following `testbench.yaml` file on the project root directory.
-
-```yaml
-providers:
-  - Laravel\Passport\PassportServiceProvider
-
-env:
-  - DB_CONNECTION="mysql"
-  - DB_USERNAME="homestead"
-  - DB_PASSWORD="secret"
-```
 
 ::: details NOTES & CONSIDERATIONS
 

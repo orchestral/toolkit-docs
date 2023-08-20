@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Laravel Packages Toolkit"
+  name: "Packages Toolkit for Laravel"
   text: 
   tagline: "Documentation for Canvas, Testbench and Workbench"
   actions:
