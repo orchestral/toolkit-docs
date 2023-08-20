@@ -8,18 +8,20 @@ hero:
   tagline: "Documentation for Canvas, Testbench and Workbench"
   actions:
     - theme: brand
-      text: Testbench
-      link: /testbench/getting-started
+      text: Getting Started
+      link: /getting-started
     # - theme: alt
     #   text: API Examples
     #   link: /api-examples
 
 features:
   - title: Testbench
-    details: Testbench simplify the process to tests your Laravel's packages without massive configuration and build steps.
-  # - title: Feature B
-  #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  # - title: Feature C
-  #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Simplify the process to create feature and integration tests for your Laravel's packages without massive configuration and build steps.
+  - title: Testbench Dusk
+    details: Built on top Testbench to provide support running browser based tests for your Laravel's packages using Laravel Dusk
+  - title: Canvas
+    details: Canvas replicates all of the `make` artisan commands available in your basic Laravel application to speed up your Laravel's package development.
+  - title: Workbench
+    details: Workbench provides a set of configurable actions and commands to allow preview, interacting and serving your Laravel's packages during development
 ---
 

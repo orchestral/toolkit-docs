@@ -1,0 +1,82 @@
+# Introduction
+
+Laravel Packages Toolkit is a collections packages that has been designed to write, tests and preview your Laravel packages.
+
+Before going through the rest of this documentation, please take some time to read the [Package Development](https://laravel.com/docs/packages) section of Laravel's own documentation, if you haven't done so yet.
+
+[[toc]]
+
+## Testbench
+
+Testbench simplify the process to create feature and integration tests for your Laravel's packages without massive configuration and build steps. 
+
+### Installing
+
+You can install **Testbench** using the following command:
+
+```bash
+composer require --dev "orchestra/testbench"
+```
+
+### Version Compatibility
+
+ Laravel  | Testbench | Recommended Versions
+:---------|:----------|:----------
+ 8.x      | 6.x       | `^6.35`
+ 9.x      | 7.x       | `^7.29`
+ 10.x     | 8.x       | `^8.9`
+
+## Testbench Dusk
+
+Testbench Dusk built on top Testbench to provide support running browser based tests for your Laravel's packages using [Laravel Dusk](https://laravel.com/docs/dusk). 
+
+### Installing
+
+You can install **Testbench Dusk** using the following command:
+
+```bash
+composer require --dev "orchestra/testbench-dusk"
+```
+
+### Version Compatibility
+
+ Laravel  | Testbench Dusk | Recommended Versions
+:---------|:---------------|:----------
+ 8.x      | 6.x            | `^6.34`
+ 9.x      | 7.x            | `^7.29`
+ 10.x     | 8.x            | `^8.9`
+
+## Canvas
+
+Canvas replicates all of the `make` artisan commands available in your basic Laravel application to speed up your Laravel's package development.
+
+### Installing
+
+You can install **Canvas** using the following command:
+
+```bash
+composer require --dev "orchestra/canvas"
+```
+
+### Version Compatibility
+
+ Laravel  | Canvas   | Recommended Versions
+:---------|:---------|:----------
+ 8.x      | 6.x      | `^6.10`
+ 9.x      | 7.x      | `^7.5`
+ 10.x     | 8.x      | `^8.4`
+
+
+## Testbench Core
+
+Testbench Core provides the full testing API and CLI `testbench` binary which is being used by **Testbench**, **Testbench Dusk** and **Workbench**. This component is accessible via `orchestra/testbench` without any further requirement.
+
+## Workbench
+
+Workbench provides a set of configurable actions and commands to allow preview, interacting and serving your Laravel's packages during development. This component is accessible via `orchestra/testbench` without any further requirement.
+
+### Installing
+
+```bash
+vendor/bin/testbench workbench:install
+```

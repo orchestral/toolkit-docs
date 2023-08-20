@@ -28,7 +28,7 @@ providers:
   - Laravel\Passport\PassportServiceProvider
 ```
 
-:::tip Notes and Considerations
+::: details NOTES & CONSIDERATIONS
 
 * The command is currently designed to help testing, however you might be able to run other feature to help package development such as running `ide-helper:models` etc.
 * The command wouldn't work for file stubbing as the generated file will be based on the booted Laravel application and not your package directories.

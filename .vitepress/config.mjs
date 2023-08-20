@@ -9,27 +9,31 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Testbench', link: '/testbench/getting-started' },
+      { text: 'Testbench', link: '/testbench/getting-started' },
     ],
 
     sidebar: [
       {
+        text: 'Getting Started',
+        items: [
+          { text: 'Installing', link: 'getting-started' },
+          { text: 'Setup', link: 'getting-started/setup' },
+        ],
+      },
+      {
         text: 'Testbench',
         items: [
           {
-            text: 'Getting Started',
-            items: [
-              { text: 'Introduction', link: '/testbench/getting-started' },
-              // { text: 'Configuration', link: '/testbench/getting-started/configuration' }
-            ],
-          },
-          {
             text: 'The Basic',
+            link : '/testbench/the-basic',
             items: [
-              { text: 'TestCase', link : '/testbench/the-basic' },
               { text: 'Define Environment', link : '/testbench/the-basic/environment' },
               { text: 'Define Databases', link : '/testbench/the-basic/databases' },
+              { text: 'Define Routes', link : '/testbench/the-basic/routes' },
             ],
           },
+          { text: 'Command-line Interface', link: '/testbench/cli' },
+          { text: 'Integrations', link: '/testbench/integrations' },
           { text: 'Troubleshooting', link: '/testbench/troubleshooting' },
         ],
       },
