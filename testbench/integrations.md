@@ -50,7 +50,7 @@ You can also utilise Collision with Testbench to use Laravel flavored artisan te
 composer require --dev "nunomaduro/collision"
 ```
 
-After installation complete and `package:discover` executed you should be able to use `package:test` command directly from Testbench CLI Commander:
+After installation complete and `package:discover` executed you should be able to use `package:test` command directly from `testbench` CLI:
 
 ```bash
 vendor/bin/testbench package:test

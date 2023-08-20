@@ -22,3 +22,43 @@ While the `testbench` CLI was originally designed to help testing, you might be 
 
 The command wouldn't work for file stubbing as the generated file will be based on the booted Laravel application and not your package directories.
 :::
+
+[[toc]]
+
+## Available Commands
+
+`testbench` CLI also introduces few commands to help your packages development.
+
+### Create SQLite Database
+
+This command create `database/database.sqlite` on your package's Laravel skeleton. You can invoke it by running the following command:
+
+```bash
+vendor/bin/testbench package:create-sqlite-db
+``` 
+
+### Drop SQLite Database
+
+This command drop `database/database.sqlite` on your package's Laravel skeleton. You can invoke it by running the following command:
+
+```bash
+vendor/bin/testbench package:drop-sqlite-db
+``` 
+
+### Purge Skeleton
+
+This command will purge skeleton and reset everything to default. You can also configure `purge` section under the `testbench.yaml` configuration files such as:
+
+```yaml
+purge:
+  directories:
+    - public/vendor/*
+  files:
+    - lang/*.json
+```
+
+You can invoke it by running the following command:
+
+```bash
+vendor/bin/testbench package:purge-skeleton
+```
