@@ -8,6 +8,7 @@ The Packages Toolkit for Laravel uses `testbench.yaml` as configuration file whe
  `providers`     | `array`   | Set of Service Provider classes to be loaded.
  `dont-discover` | `array`   | List of packages to be ignored.
  `bootstrappers` | `array`   | Set of bootstrapper classes to be loaded.
+ `env`           | `array`   | Set environment variables to be loaded under `testbench` CLI.
  `purge`         | `array`   | Configurable `files` and `directories` to be pruned via `package:purge-skeleton` command.
  `workbench`     | Object    | See [Workbench configuration](#workbench-configuration) for detail.
 
@@ -51,6 +52,19 @@ Alternatively, you can also use `dont-discover` to exclude specific packages fro
 dont-discover:
   - laravel/html
 ```
+
+### Environment Variables
+
+You can use `env` configuration key to set an array of environment variables to be loaded under `testbench` CLI:
+
+```yaml
+env:
+  - SEND_QUERIES_TO_RAY=(false)
+```
+
+::: warning `env` limitation
+The `env` environment variables is only applied when using the CLI and will not be used when running tests.
+:::
 
 ## Workbench Configuration
 

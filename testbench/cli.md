@@ -14,14 +14,11 @@ or, you can setup the application such as installing Passport:
 vendor/bin/testbench passport:install
 ```
 
-Both commands allows you to setup the testing environment where before you only able to setup manually on every `TestCase::setUp()`.
+Both commands allows you to setup the testing environment where before you only able to setup manually on every `TestCase::setUp()`. 
 
-::: details NOTES & CONSIDERATIONS
+While the `testbench` CLI was originally designed to help testing, you might be able to run other feature to help package development such as running `ide-helper:models` etc.
 
-* The command is currently designed to help testing, however you might be able to run other feature to help package development such as running `ide-helper:models` etc.
-* The command wouldn't work for file stubbing as the generated file will be based on the booted Laravel application and not your package directories.
-:::
+::: warning NOTES & CONSIDERATIONS
 
-::: warning `env` limitation
-The `env` environment variables is only applied when using the CLI and will not be used when running tests.
+The command wouldn't work for file stubbing as the generated file will be based on the booted Laravel application and not your package directories.
 :::
