@@ -129,40 +129,6 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-## In-Memory SQLite Connection
-
-To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) by defining it under PHPUnit Configuration File:
-
-```xml
-<phpunit>
-
-    // ...
-
-    <php>
-        <env name="DB_CONNECTION" value="testing"/>
-    </php>
-
-</phpunit>
-```
-
-Alternatively, you can also explicitly setting it up under `defineEnvironment()`:
-
-```php
-class TestCase extends \Orchestra\Testbench\TestCase 
-{
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
-     */
-    protected function defineEnvironment($app)
-    {
-        $app['config']->set('database.default', 'testing');
-    }
-}
-```
-
 ## Application Timezone
 
 You can also easily override application default timezone, instead of the default `"UTC"`:

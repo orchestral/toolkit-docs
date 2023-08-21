@@ -2,6 +2,41 @@
 
 It is recommended for package to use `ServiceProvider::loadMigrationsFrom()` feature (it automatically handle migrations for packages when used in Laravel applications and during tests) or you can define migrations specifically for tests environment using the recommended guide below.
 
+
+## In-Memory SQLite Connection
+
+To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) by defining it under PHPUnit Configuration File:
+
+```xml
+<phpunit>
+
+    // ...
+
+    <php>
+        <env name="DB_CONNECTION" value="testing"/>
+    </php>
+
+</phpunit>
+```
+
+Alternatively, you can also explicitly setting it up under `defineEnvironment()`:
+
+```php
+class TestCase extends \Orchestra\Testbench\TestCase 
+{
+    /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
+     */
+    protected function defineEnvironment($app)
+    {
+        $app['config']->set('database.default', 'testing');
+    }
+}
+```
+
 ## Automatically execute migrations
 
 By defaults you can use the `RefreshDatabase` trait to *only* run package migrations defined through the package's service provider.
