@@ -58,5 +58,9 @@ export default defineConfig({
     ],
 
     outline: [2, 4],
+
+    search: {
+      provider: 'local'
+    },
   }
 })
