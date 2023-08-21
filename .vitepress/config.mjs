@@ -37,7 +37,12 @@ export default defineConfig({
           { text: 'Troubleshooting', link: '/testbench/troubleshooting' },
         ],
       },
-      // { text: 'Testbench Dusk', items: [] },
+      {
+        text: 'Testbench Dusk',
+        items: [
+          { text: 'Introduction', link: 'testbench-dusk' },
+        ]
+      },
       {
         text: 'Workbench',
         items: [

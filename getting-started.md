@@ -1,5 +1,4 @@
 ---
-outline: 2
 next:
   text: 'Configuration'
   link: '/getting-started/configuration'
@@ -39,7 +38,7 @@ vendor/bin/testbench workbench:install
 
 Testbench simplify the process to create feature and integration tests for your Laravel's packages without massive configuration and build steps. 
 
-#### Version Compatibility
+##### Version Compatibility
 
  Laravel  | Testbench | Recommended Versions
 :---------|:----------|:----------
@@ -51,7 +50,7 @@ Testbench simplify the process to create feature and integration tests for your 
 
 Testbench Dusk built on top Testbench to provide support running browser based tests for your Laravel's packages using [Laravel Dusk](https://laravel.com/docs/dusk). 
 
-#### Version Compatibility
+##### Version Compatibility
 
  Laravel  | Testbench Dusk | Recommended Versions
 :---------|:---------------|:----------
@@ -63,7 +62,7 @@ Testbench Dusk built on top Testbench to provide support running browser based t
 
 Testbench Core provides the full testing API and CLI `testbench` binary which is being used by **Testbench**, **Testbench Dusk** and **Workbench**. This component is accessible via `orchestra/testbench` without any further requirement.
 
-#### Version Compatibility
+##### Version Compatibility
 
  Laravel  | Testbench Core   
 :---------|:-----------
@@ -75,7 +74,7 @@ Testbench Core provides the full testing API and CLI `testbench` binary which is
 
 Canvas replicates all of the `make` artisan commands available in your basic Laravel application to speed up your Laravel's package development.
 
-#### Version Compatibility
+##### Version Compatibility
 
  Laravel  | Canvas   | Recommended Versions
 :---------|:---------|:----------
@@ -87,7 +86,7 @@ Canvas replicates all of the `make` artisan commands available in your basic Lar
 
 Workbench provides a set of configurable actions and commands to allow previewing, interacting and serving your Laravel's packages during development. This component is accessible via `orchestra/testbench` without any further requirement.
 
-#### Version Compatibility
+##### Version Compatibility
 
  Laravel  | Workbench   
 :---------|:-----------

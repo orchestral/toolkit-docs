@@ -16,7 +16,7 @@ Testbench simplify the process to create feature and integration tests for your 
 You can install **Testbench** using the following command:
 
 ```bash
-composer require --dev "orchestra/testbench"
+composer require --dev "orchestra/testbench-dusk"
 ```
 
 Next, you can run the following command to scaffold your package with the recommended setup:
@@ -27,9 +27,8 @@ vendor/bin/testbench workbench:install
 
 ## Version Compatibility
 
- Laravel  | Testbench
+ Laravel  | Testbench Dusk
 :---------|:----------
- 5.x.x    | 3.x.x
  6.x      | 4.x
  7.x      | 5.x
  8.x      | 6.x
@@ -42,10 +41,10 @@ Please refer to [Configuration](/getting-started/configuration) documenation for
 
 ## Getting Started
 
-To use Testbench Component, all you need to do is extend `Orchestra\Testbench\TestCase` instead of `PHPUnit\Framework\TestCase`. The fixture `app` booted by `Orchestra\Testbench\TestCase` is predefined to follow the base application skeleton of Laravel.
+To use Testbench Dusk Component, all you need to do is extend `Orchestra\Testbench\Dusk\TestCase` instead of `PHPUnit\Framework\TestCase`. The fixture `app` booted by `Orchestra\Testbench\Dusk\TestCase` is predefined to follow the base application skeleton of Laravel.
 
 ```php{1}
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
     //
 }
@@ -58,7 +57,7 @@ Testbench will use the configuration values defined in `testbench.yaml` and use 
 ```php{1,5}
 use Orchestra\Testbench\Concerns\WithWorkbench;
 
-class TestCase extends \Orchestra\Testbench\TestCase 
+class TestCase extends \Orchestra\Testbench\Dusk\TestCase 
 {
     use WithWorkbench;
 }
