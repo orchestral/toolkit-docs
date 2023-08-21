@@ -25,6 +25,17 @@ Next, you can run the following command to scaffold your package with the recomm
 vendor/bin/testbench workbench:install
 ```
 
+## Version Compatibility
+
+ Laravel  | Testbench
+:---------|:----------
+ 5.x.x    | 3.x.x
+ 6.x      | 4.x
+ 7.x      | 5.x
+ 8.x      | 6.x
+ 9.x      | 7.x
+ 10.x     | 8.x
+
 ## Configuration
 
 Please refer to [Configuration](/getting-started/configuration) documenation for futher details.
