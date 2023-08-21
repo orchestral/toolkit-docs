@@ -61,17 +61,20 @@ By default you can either use `sqlite`, `mysql`, `pgsql` or `sqlsrv` with Testbe
 
 If you opt to use `sqlite`, you might want to set the default database connection to `sqlite` either using `phpunit` configuration or setting it up on `getEnvironmentSetUp()` method.
 
-```php
-/**
- * Define environment setup.
- *
- * @param  Illuminate\Foundation\Application  $app
- *
- * @return void
- */
-protected function getEnvironmentSetUp($app)
+```php{10-13}
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
-    $this->app['config']->set('database.default', 'sqlite');
+    /**
+     * Define environment setup.
+     *
+     * @param  Illuminate\Foundation\Application  $app
+     *
+     * @return void
+     */
+    protected function defineEnvironment($app)
+    {
+        $this->app['config']->set('database.default', 'sqlite');
+    }
 }
 ```
 > **Note**: In contradiction with laravel documentation you **should not** use `Illuminate\Foundation\Testing\DatabaseMigrations` trait, as testbench-dusk handles rollbacks by its self
@@ -79,66 +82,13 @@ protected function getEnvironmentSetUp($app)
 To create the sqlite database you just need to run the following code:
 
 ```bash
-php vendor/orchestra/testbench-dusk/create-sqlite-db
+vendor/bin/testbench-dusk package:create-sqlite-db
 ```
 
 ## Advanced Usage
 
-### Customising the Laravel App instance used during a test
+### Customising the Laravel served instance used during a test
 
-We use the calling test class to build up the application to be used when serving the request.
+With Testbench Dusk, it execute a separate process to serve the application and any changes made within the TestCase doesn't get executed in the served instance. 
 
-Sometimes you will want to make a minor change to the application for a single test (e.g. changing a config item).
-
-This is made possible by using the `tweakApplication` method on the test, and passing in a closure to apply. At the end of the test, you need to call the `removeApplicationTweaks` method to stop the changes being applied to the server.
-
-An example test (`can_tweak_the_application_within_a_test`) is available in the `tests/Browser/RouteTest.php` test file.
-
-## Troubleshooting
-
-### Chrome versions
-
-```
-Facebook\WebDriver\Exception\SessionNotCreatedException: session not created: Chrome version must be between 70 and 73
-```
-
-If tests report following error, run the following command:
-
-    ./vendor/bin/dusk-updater update
-
-Alternatively you can run the following command to detect installed ChromeDriver and auto update it if neccessary:
-
-    ./vendor/bin/dusk-updater detect --auto-update
-
-### Running Dusk and standard testbench tests in same suite
-
-You may encounter the error
-`PHP Fatal error: Cannot declare class CreateUsersTable, because the name is already in use in...`
-when using [`loadLaravelMigrations()`](https://github.com/orchestral/testbench-core/blob/3.9/src/Concerns/WithLaravelMigrations.php) with some of your test extending the Dusk test class `\Orchestra\Testbench\Dusk\TestCase` and others extend the "normal" test class `\Orchestra\Testbench\TestCase`.
-
-The problem arises because migrations are loaded from both packages' "skeletons" during the same test run,
-and Laravel's migration classes are not namespaced.
-
-#### Solution
-
-Make sure all integration tests in your test suite use the same Laravel skeleton (the one from `testbench-dusk`),
-regardless of the base class they extend by overriding `getBasePath()` in your test classes.
-Do the override in your base integration test class, or perhaps in a trait if you need it in multiple classes.
-
-```php
-/**
-* Make sure all integration tests use the same Laravel "skeleton" files.
-* This avoids duplicate classes during migrations.
-*
-* Overrides \Orchestra\Testbench\Dusk\TestCase::getBasePath
-*       and \Orchestra\Testbench\Concerns\CreatesApplication::getBasePath
-*
-* @return string
-*/
-protected function getBasePath()
-{
-    // Adjust this path depending on where your override is located.
-    return __DIR__.'/../vendor/orchestra/testbench-dusk/laravel'; 
-}
-```
-
+As an example, sometimes you will want to make a minor change to the application for a single test such as changing a config item etc. This is made possible by using the `beforeServingApplication` method on the test, and passing in a closure to apply.
