@@ -7,21 +7,18 @@ It is recommended for package to use `ServiceProvider::loadMigrationsFrom()` fea
 
 To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) by defining it under PHPUnit Configuration File:
 
-```xml
+```xml{4}
 <phpunit>
-
     // ...
-
     <php>
         <env name="DB_CONNECTION" value="testing"/>
     </php>
-
 </phpunit>
 ```
 
 Alternatively, you can also explicitly setting it up under `defineEnvironment()`:
 
-```php
+```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
 {
     /**
@@ -41,7 +38,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By defaults you can use the `RefreshDatabase` trait to *only* run package migrations defined through the package's service provider.
 
-```php
+```php{1,5}
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -56,7 +53,7 @@ If you also need to run the default Laravel migrations such as the `users` table
 
 Instead of just automatically migrate the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
 
-```php
+```php{1,10-17}
 use function Orchestra\Testbench\artisan;
 
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -81,7 +78,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default Testbench doesn't execute the default Laravel migrations which include `users` and `password_resets` table. In order to run the migration just add the following command:
 
-```php
+```php{10}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -98,7 +95,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also set specific database connection to be used by adding `--database` options:
 
-```php
+```php{10}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -117,7 +114,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 To run migrations that are only used for testing purposes and not part of your package, add the following to your base test class:
 
-```php
+```php{1,12}
 use function Orchestra\Testbench\workbench_path;
 
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -138,7 +135,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You may also utilise `DatabaseTransactions` for migrated state using the following:
 
-```php
+```php{1,5}
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class TestCase extends \Orchestra\Testbench\TestCase

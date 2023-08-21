@@ -10,9 +10,9 @@ hero:
     - theme: brand
       text: Getting Started
       link: /getting-started
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+    - theme: alt
+      text: Testbench
+      link: /testbench
 
 features:
   - title: Testbench

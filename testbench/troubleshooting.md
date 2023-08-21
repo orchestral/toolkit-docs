@@ -1,3 +1,7 @@
+---
+next: false
+---
+
 # Troubleshooting
 
 [[toc]]

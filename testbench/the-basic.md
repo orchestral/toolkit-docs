@@ -1,19 +1,6 @@
 # The Basic
 
-To use Testbench Component, all you need to do is extend `Orchestra\Testbench\TestCase` instead of `PHPUnit\Framework\TestCase`. The fixture `app` booted by `Orchestra\Testbench\TestCase` is predefined to follow the base application skeleton of Laravel.
-
-```php
-class TestCase extends \Orchestra\Testbench\TestCase
-{
-    //
-}
-```
-
 [[toc]]
-
-## Installation
-
-Refer to the [Getting Started](../getting-started#testbench) documentation.
 
 ## Package Service Providers
 

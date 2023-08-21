@@ -66,7 +66,7 @@ env:
 The `env` environment variables is only applied when using the CLI and will not be used when running tests.
 :::
 
-## Workbench Configuration
+### Workbench Configuration
 
 You can use `workbench` configuration key to set to enables Workbench integration on your Laravel's packages.
 
@@ -80,7 +80,8 @@ You can use `workbench` configuration key to set to enables Workbench integratio
  `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command.
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
  `assets`        | `array`       | Set a collection of `tag` used in `vendor:publish` to be use with `asset-publish` recipe when running `workbench:build` command.
-### Example
+ 
+#### Example
 
 ```yaml
 workbench:

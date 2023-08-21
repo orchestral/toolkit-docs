@@ -1,3 +1,10 @@
+---
+outline: 2
+next:
+  text: 'Configuration'
+  link: '/getting-started/configuration'
+---
+
 # Introduction
 
 Packages Toolkit for Laravel is a collections packages that has been designed to write, tests and preview your Laravel packages.
@@ -6,13 +13,9 @@ Before going through the rest of this documentation, please take some time to re
 
 [[toc]]
 
-## Testbench
+## Installation
 
-Testbench simplify the process to create feature and integration tests for your Laravel's packages without massive configuration and build steps. 
-
-#### Installing
-
-You can install **Testbench** using the following command:
+To start using Packages Toolkit for Laravel you can first install Testbench component:
 
 ```bash
 composer require --dev "orchestra/testbench"
@@ -24,6 +27,12 @@ Next, you can run the following command to scaffold your package with the recomm
 vendor/bin/testbench workbench:install
 ```
 
+## Components
+
+### Testbench
+
+Testbench simplify the process to create feature and integration tests for your Laravel's packages without massive configuration and build steps. 
+
 #### Version Compatibility
 
  Laravel  | Testbench | Recommended Versions
@@ -32,7 +41,7 @@ vendor/bin/testbench workbench:install
  9.x      | 7.x       | `^7.29`
  10.x     | 8.x       | `^8.9`
 
-## Testbench Dusk
+### Testbench Dusk
 
 Testbench Dusk built on top Testbench to provide support running browser based tests for your Laravel's packages using [Laravel Dusk](https://laravel.com/docs/dusk). 
 
@@ -58,7 +67,7 @@ vendor/bin/testbench workbench:install
  9.x      | 7.x            | `^7.29`
  10.x     | 8.x            | `^8.9`
 
-## Testbench Core
+### Testbench Core
 
 Testbench Core provides the full testing API and CLI `testbench` binary which is being used by **Testbench**, **Testbench Dusk** and **Workbench**. This component is accessible via `orchestra/testbench` without any further requirement.
 
@@ -70,17 +79,9 @@ Testbench Core provides the full testing API and CLI `testbench` binary which is
  9.x      | 7.x
  10.x     | 8.x
 
-## Canvas
+### Canvas
 
 Canvas replicates all of the `make` artisan commands available in your basic Laravel application to speed up your Laravel's package development.
-
-#### Installing
-
-You can install **Canvas** using the following command:
-
-```bash
-composer require --dev "orchestra/canvas"
-```
 
 #### Version Compatibility
 
@@ -90,7 +91,7 @@ composer require --dev "orchestra/canvas"
  9.x      | 7.x      | `^7.5`
  10.x     | 8.x      | `^8.4`
 
-## Workbench
+### Workbench
 
 Workbench provides a set of configurable actions and commands to allow previewing, interacting and serving your Laravel's packages during development. This component is accessible via `orchestra/testbench` without any further requirement.
 

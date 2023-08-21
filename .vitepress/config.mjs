@@ -22,8 +22,7 @@ export default defineConfig({
       {
         text: 'Testbench',
         items: [
-          { text: 'Introduction', link: 'getting-started#testbench' },
-          { text: 'Configuration', link: 'getting-started/configuration' },
+          { text: 'Introduction', link: 'testbench' },
           {
             text: 'The Basic',
             link : '/testbench/the-basic',
@@ -31,7 +30,6 @@ export default defineConfig({
               { text: 'Define Environment', link : '/testbench/the-basic/environment' },
               { text: 'Define Databases', link : '/testbench/the-basic/databases' },
               { text: 'Define Routes', link : '/testbench/the-basic/routes' },
-              { text: 'Define using YAML', link : '/testbench/the-basic/workbench' },
             ],
           },
           { text: 'Command-line Interface', link: '/testbench/cli' },
@@ -51,6 +49,8 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/orchestral/testbench' }
-    ]
+    ],
+
+    outline: [2, 4],
   }
 })
