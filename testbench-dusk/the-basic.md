@@ -8,7 +8,7 @@ Browser tests can take a while to run, so you could also separate your tests in 
 
 For example:
 
-```xml
+```xml{2-4}
 <testsuites>
     <testsuite name="Browser">
         <directory suffix="Test.php">./tests/Browser</directory>

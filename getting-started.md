@@ -17,13 +17,7 @@ Before going through the rest of this documentation, please take some time to re
 To start using Packages Toolkit for Laravel you can first install Testbench component:
 
 ```bash
-composer require --dev "orchestra/testbench" "orchestra/canvas"
-```
-
-To allow using Testbench Dusk, you can run the following command:
-
-```bash
-composer require --dev "orchestra/testbench-dusk"
+composer require --dev "orchestra/testbench" "orchestra/testbench-dusk" "orchestra/canvas"
 ```
 
 Next, you can run the following command to scaffold your package with the recommended setup:
