@@ -91,7 +91,7 @@ With Testbench Dusk, it execute a separate process to serve the application and 
 
 As an example, sometimes you will want to make a minor change to the application for a single test such as changing a config item etc. This is made possible by using the `beforeServingApplication` method on the test, and passing in a closure to apply.
 
-```php
+```php{3-5}
 use Laravel\Dusk\Browser;
 
 $this->beforeServingApplication(function ($app, $config) {
