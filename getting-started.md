@@ -51,20 +51,6 @@ Testbench simplify the process to create feature and integration tests for your 
 
 Testbench Dusk built on top Testbench to provide support running browser based tests for your Laravel's packages using [Laravel Dusk](https://laravel.com/docs/dusk). 
 
-#### Installing
-
-You can install **Testbench Dusk** using the following command:
-
-```bash
-composer require --dev "orchestra/testbench-dusk"
-```
-
-Next, you can run the following command to scaffold your package with the recommended setup:
-
-```bash
-vendor/bin/testbench workbench:install
-```
-
 #### Version Compatibility
 
  Laravel  | Testbench Dusk | Recommended Versions
