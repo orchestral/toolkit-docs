@@ -41,6 +41,10 @@ export default defineConfig({
         text: 'Testbench Dusk',
         items: [
           { text: 'Introduction', link: 'testbench-dusk' },
+          {
+            text: 'The Basic',
+            link : '/testbench-dusk/the-basic',
+          },
         ]
       },
       {

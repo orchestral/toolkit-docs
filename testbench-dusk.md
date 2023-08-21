@@ -1,8 +1,6 @@
 ---
 prev: false
-next: 
-  text: 'The Basic'
-  link: '/testbench/the-basic'
+next: false
 ---
 
 # Introduction
@@ -44,7 +42,7 @@ Please refer to [Configuration](/getting-started/configuration) documenation for
 To use Testbench Dusk Component, all you need to do is extend `Orchestra\Testbench\Dusk\TestCase` instead of `PHPUnit\Framework\TestCase`. The fixture `app` booted by `Orchestra\Testbench\Dusk\TestCase` is predefined to follow the base application skeleton of Laravel.
 
 ```php{1}
-class TestCase extends \Orchestra\Testbench\Dusk\TestCase
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
     //
 }
@@ -57,7 +55,7 @@ Testbench will use the configuration values defined in `testbench.yaml` and use 
 ```php{1,5}
 use Orchestra\Testbench\Concerns\WithWorkbench;
 
-class TestCase extends \Orchestra\Testbench\Dusk\TestCase 
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase 
 {
     use WithWorkbench;
 }
@@ -80,4 +78,13 @@ Using `WithWorkbench` will make `TestCase` uses `laravel` configuration value fr
 ```yaml
 laravel: ./skeleton
 ```
+
+### Further reading
+
+Before going through the rest of this documentation, please take some time to read the following documentation:
+
+* [Package Development for Laravel](https://laravel.com/docs/packages)
+* [Orchestra Testbench Documentation](/testbench)
+* [Laravel Dusk Documentation](https://laravel.com/docs/dusk)
+
 
