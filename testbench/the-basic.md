@@ -2,6 +2,25 @@
 
 [[toc]]
 
+## PHPUnit Configuration
+
+You can separate your tests in your `phpunit.xml` file by providing different testsuites, allowing you to run your Feature tests on demand.
+
+For example:
+
+```xml
+<testsuites>
+    <testsuite name="Feature">
+        <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite>
+    <testsuite name="Unit">
+        <directory suffix="Test.php">./tests/Unit</directory>
+    </testsuite>
+</testsuites>
+```
+
+Run only your feature tests by running phpunit with the `--testsuite=Feature` option.
+
 ## Package Service Providers
 
 To load your package service provider, override the `getPackageProviders`.
