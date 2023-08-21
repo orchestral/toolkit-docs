@@ -23,6 +23,7 @@ export default defineConfig({
         text: 'Testbench',
         items: [
           { text: 'Introduction', link: 'getting-started#testbench' },
+          { text: 'Configuration', link: 'getting-started/configuration' },
           {
             text: 'The Basic',
             link : '/testbench/the-basic',
