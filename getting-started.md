@@ -92,7 +92,7 @@ composer require --dev "orchestra/canvas"
 
 ## Workbench
 
-Workbench provides a set of configurable actions and commands to allow preview, interacting and serving your Laravel's packages during development. This component is accessible via `orchestra/testbench` without any further requirement.
+Workbench provides a set of configurable actions and commands to allow previewing, interacting and serving your Laravel's packages during development. This component is accessible via `orchestra/testbench` without any further requirement.
 
 #### Version Compatibility
 

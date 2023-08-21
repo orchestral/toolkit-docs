@@ -22,6 +22,6 @@ features:
   - title: Canvas
     details: Canvas replicates all of the <code>make</code> artisan commands available in your basic Laravel application to speed up your Laravel's package development.
   - title: Workbench
-    details: Workbench provides a set of configurable actions and commands to allow preview, interacting and serving your Laravel's packages during development
+    details: Workbench provides a set of configurable actions and commands to allow previewing, interacting and serving your Laravel's packages during development
 ---
 
