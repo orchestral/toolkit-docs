@@ -185,7 +185,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Using `.env` Environment Variables
 
-By default Testbench will load `.env` file when booting the application. You can change to completely ignores `.env` file by setting `TestCase::$loadEnvironmentVariables` property to `false`:
+By default Testbench will load `.env` file when booting the application if the file exist. You can change to completely ignores `.env` file by setting `TestCase::$loadEnvironmentVariables` property to `false`:
 
 ```php
 class TestCase extends \Orchestra\Testbench\TestCase
