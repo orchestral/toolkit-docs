@@ -55,7 +55,7 @@ Options::withoutUI();
 
 We recommend you place this in a `tests/bootstrap.php` file, similar to this packages own test setup and use this for PHP Unit.
 
-## Database
+## Supported Database
 
 By default you can either use `sqlite`, `mysql`, `pgsql` or `sqlsrv` with Testbench Dusk, however do note that it is impossible to use `sqlite` using `:memory:` database as you would with **Testbench** or **Testbench BrowserKit**.
 
@@ -85,10 +85,20 @@ To create the sqlite database you just need to run the following code:
 vendor/bin/testbench-dusk package:create-sqlite-db
 ```
 
-## Advanced Usage
-
-### Customising the Laravel served instance used during a test
+## Customising the Laravel served instance used during a test
 
 With Testbench Dusk, it execute a separate process to serve the application and any changes made within the TestCase doesn't get executed in the served instance. 
 
 As an example, sometimes you will want to make a minor change to the application for a single test such as changing a config item etc. This is made possible by using the `beforeServingApplication` method on the test, and passing in a closure to apply.
+
+```php
+use Laravel\Dusk\Browser;
+
+$this->beforeServingApplication(function ($app, $config) {
+    $config->set('mail.default', 'log');
+});
+
+$this->browse(function (Browser $browser) {
+
+});
+```
