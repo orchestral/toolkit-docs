@@ -48,6 +48,34 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 }
 ```
 
+### PHPUnit Configuration
+
+Browser tests can take a while to run, so you could also separate your testsuite in your `phpunit.xml` file by providing different testsuites, allowing you to run your Browser tests on demand.
+
+```xml{2-4}
+<testsuites>
+    <testsuite name="Browser">
+        <directory suffix="Test.php">./tests/Browser</directory>
+    </testsuite>
+    <testsuite name="Feature">
+        <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite>
+    <testsuite name="Unit">
+        <directory suffix="Test.php">./tests/Unit</directory>
+    </testsuite>
+</testsuites>
+```
+
+Run only your browser tests by running phpunit with the `--testsuite=Browser` option.
+
+```bash
+vendor/bin/phpunit --testsuite=Browser
+```
+
+::: tip Using separate PHPUnit Configuration
+Alternatively you can also create a separate PHPUnit Configuration dedicated, we recommend using `phpunit.dusk.xml` for this purpose.
+:::
+
 ### Autoloading using `testbench.yaml`
 
 Testbench will use the configuration values defined in `testbench.yaml` and use it's value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:

@@ -2,28 +2,6 @@
 
 [[toc]]
 
-## PHPUnit Configuration
-
-Browser tests can take a while to run, so you could also separate your tests in your `phpunit.xml` file by providing different testsuites, allowing you to run your Browser tests on demand.
-
-For example:
-
-```xml{2-4}
-<testsuites>
-    <testsuite name="Browser">
-        <directory suffix="Test.php">./tests/Browser</directory>
-    </testsuite>
-    <testsuite name="Feature">
-        <directory suffix="Test.php">./tests/Feature</directory>
-    </testsuite>
-    <testsuite name="Unit">
-        <directory suffix="Test.php">./tests/Unit</directory>
-    </testsuite>
-</testsuites>
-```
-
-Run only your browser tests by running phpunit with the `--testsuite=Browser` option.
-
 ## Custom Host and Port
 
 By default, Testbench Dusk will start its own PHP server at `http://127.0.0.1:8001`.

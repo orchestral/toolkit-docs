@@ -2,25 +2,6 @@
 
 [[toc]]
 
-## PHPUnit Configuration
-
-You can separate your tests in your `phpunit.xml` file by providing different testsuites, allowing you to run your Feature tests on demand.
-
-For example:
-
-```xml
-<testsuites>
-    <testsuite name="Feature">
-        <directory suffix="Test.php">./tests/Feature</directory>
-    </testsuite>
-    <testsuite name="Unit">
-        <directory suffix="Test.php">./tests/Unit</directory>
-    </testsuite>
-</testsuites>
-```
-
-Run only your feature tests by running phpunit with the `--testsuite=Feature` option.
-
 ## Package Service Providers
 
 To load your package service provider, override the `getPackageProviders`.
@@ -160,9 +141,15 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         // Code before application created.
 
-        parent::setUp();
+        $this->afterApplicationCreated(function () {
+            // Code after application created.
+        });
 
-        // Code after application created.
+        $this->beforeApplicationDestroyed(function () {
+            // Code before application destroyed.
+        });
+
+        parent::setUp();
     }
 }
 ```
@@ -171,7 +158,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can easily swap Console Kernel for application bootstrap by overriding `resolveApplicationConsoleKernel()` method:
 
-```php
+```php{9-15}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -194,7 +181,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can easily swap HTTP Kernel for application bootstrap by overriding `resolveApplicationHttpKernel()` method:
 
-```php
+```php{9-15}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -218,7 +205,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default Testbench provide a basic Laravel Skeleton. However, you can override the `applicationBasePath()` method from your TestCase class:
 
-```php
+```php{8-11}
 class TestCase extends \Orchestra\Testbench\TestCase 
 {
     /**
@@ -257,8 +244,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can easily test blade components with Laravel's `Illuminate\Foundation\Testing\Concerns\InteractsWithViews` trait.
 
-```php
-<?php
+```php{1,5}
 use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
 
 class TestCase extends \Orchestra\Testbench\TestCase

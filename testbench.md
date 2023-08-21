@@ -38,7 +38,7 @@ vendor/bin/testbench workbench:install
 
 ## Configuration
 
-Please refer to [Configuration](/getting-started/configuration) documenation for futher details.
+Please refer to [Configuration](/getting-started/configuration) documentation for futher details.
 
 ## Getting Started
 
@@ -49,6 +49,29 @@ class TestCase extends \Orchestra\Testbench\TestCase
 {
     //
 }
+```
+
+### PHPUnit Configuration
+
+You can separate your tests in your `phpunit.xml` file by providing different testsuites, allowing you to run your Feature tests on demand.
+
+For example:
+
+```xml
+<testsuites>
+    <testsuite name="Feature">
+        <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite>
+    <testsuite name="Unit">
+        <directory suffix="Test.php">./tests/Unit</directory>
+    </testsuite>
+</testsuites>
+```
+
+Run only your feature tests by running phpunit with the `--testsuite=Feature` option.
+
+```bash
+vendor/bin/phpunit --testsuite=Feature
 ```
 
 ### Autoloading using `testbench.yaml`
