@@ -2,7 +2,7 @@
 
 It is recommended for package to use define routes similar to Laravel such as `routes/web.php` etc. However if you have the requirement to define one or more routes just during test you can do so using the `defineRoutes()` method:
 
-```php
+```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -21,7 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also use `@define-route` annotation to customise use of `defineRoutes()` for specific test.
 
-```php
+```php{9-12,16}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**

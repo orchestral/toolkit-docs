@@ -48,8 +48,7 @@ export default defineConfig({
       {
         text: 'Workbench',
         items: [
-          { text: 'Introduction', link: 'getting-started#workbench' },
-          { text: 'Configuration', link: 'getting-started/configuration#workbench-configuration' },
+          { text: 'Introduction', link: 'workbench' },
         ],
       },
     ],

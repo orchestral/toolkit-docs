@@ -6,14 +6,13 @@
 
 To load your package service provider, override the `getPackageProviders`.
 
-```php
+```php{9-14}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array<int, class-string<\Illuminate\Support\ServiceProvider>>
      */
     protected function getPackageProviders($app)
@@ -29,14 +28,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 To load your package alias, override the `getPackageAliases`.
 
-```php
+```php{9-14}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
      * Override application aliases.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array<string, class-string<\Illuminate\Support\Facades\Facade>>
      */
     protected function getPackageAliases($app)
@@ -52,7 +50,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default Testbench doesn't enable any package discovery autoloading when running tests, however you can change this to ignore specific package using:
 
-```php
+```php{8-11}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -69,7 +67,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You may also enable auto discovery for all vendor packages using the following:
 
-```php
+```php{8-11}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -86,7 +84,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also enable auto discovery globally by setting the following property to your TestCase class:
 
-```php
+```php{8}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -107,14 +105,13 @@ Be aware that root package doesn't automate using package discovery on any versi
 
 You can also override the default application using the following commands:
 
-```php
+```php{9-14}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array<class-string<\Illuminate\Support\ServiceProvider>, class-string<\Illuminate\Support\ServiceProvider>>
      */
     protected function overrideApplicationBindings($app)

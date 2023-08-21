@@ -10,6 +10,7 @@ Starting from Testbench 6.10 you may now use Ray debugging tool directly when ru
 /** @test */
 public function it_can_resolve_domain_route()
 {
+    /** @var \Illuminate\Testing\TestResponse $response */
     $response = $this->get('http://api.localhost/hello');
 
     ray($response);

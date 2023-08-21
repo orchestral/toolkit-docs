@@ -8,7 +8,7 @@ Testbench utilised `phpunit.xml` configuration and `TestCase` methods and proper
 
 If you need to add something early in the application bootstrapping process (which executed between registering service providers and booting service providers) you could use the `defineEnvironment()` method:
 
-```php
+```php{11-28}
 use Illuminate\Contracts\Config\Repository;
 
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -62,7 +62,7 @@ protected function getEnvironmentSetup($app)
 
 You can also use `@define-env` annotation to customise use of `defineEnvironment()` for specific test.
 
-```php
+```php{3-6,8-11,15,24}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function usesMySqlConnection($app) 
@@ -99,21 +99,18 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 Most application would require `APP_KEY` to be defined in order to use encryption:
 
-```xml
+```xml{4}
 <phpunit>
-
     // ...
-
     <php>
         <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
     </php>
-
 </phpunit>
 ```
 
 Alternatively, you can also explicitly setting it up under `defineEnvironment()`:
 
-```php
+```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
 {
     /**
@@ -133,7 +130,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also easily override application default timezone, instead of the default `"UTC"`:
 
-```php
+```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
 {
     /**
@@ -153,7 +150,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default Testbench will load `.env` file when booting the application if the file exist. You can change to completely ignores `.env` file by setting `TestCase::$loadEnvironmentVariables` property to `false`:
 
-```php
+```php{3}
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected $loadEnvironmentVariables = false;
