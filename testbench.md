@@ -7,7 +7,7 @@ next:
 
 # Introduction
 
-Testbench simplify the process to create feature and integration tests for your Laravel's packages without massive configuration and build steps. 
+Testbench simplifies the process to create feature and integration tests for your Laravel packages without massive configuration and build steps. 
 
 [[toc]]
 
@@ -38,7 +38,7 @@ vendor/bin/testbench workbench:install
 
 ## Configuration
 
-Please refer to [Configuration](/getting-started/configuration) documentation for futher details.
+Please refer to [Configuration](/getting-started/configuration) documentation for further details.
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ### PHPUnit Configuration
 
-You can separate your tests in your `phpunit.xml` file by providing different testsuites, allowing you to run your Feature tests on demand.
+You can separate your tests in your `phpunit.xml` file by providing different test suites, allowing you to run your Feature tests on demand.
 
 For example:
 
@@ -68,7 +68,7 @@ For example:
 </testsuites>
 ```
 
-Run only your feature tests by running phpunit with the `--testsuite=Feature` option.
+Run only your feature tests by running PHPUnit with the `--testsuite=Feature` option.
 
 ```bash
 vendor/bin/phpunit --testsuite=Feature
@@ -76,7 +76,7 @@ vendor/bin/phpunit --testsuite=Feature
 
 ### Autoloading using `testbench.yaml`
 
-Testbench will use the configuration values defined in `testbench.yaml` and use it's value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:
+Testbench will use the configuration values defined in `testbench.yaml` and use its value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:
 
 ```php{1,5}
 use Orchestra\Testbench\Concerns\WithWorkbench;
