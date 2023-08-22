@@ -5,9 +5,9 @@ next: false
 
 # Introduction
 
-Workbench provides a set of configurable actions and commands to allow previewing, interacting and serving your Laravel's packages during development. 
+Workbench provides a set of configurable actions and commands to allow previewing, interacting, and serving your Laravel packages during development. 
 
-This component is accessible via `orchestra/testbench` without any further requirement.
+This component is accessible via `orchestra/testbench` without any further requirements.
 
 ## Installing
 
@@ -32,4 +32,4 @@ vendor/bin/testbench workbench:install
 
 ## Configuration
 
-Please refer to [Configuration](/getting-started/configuration#workbench-configuration) documentation for futher details.
+Please refer to [Configuration](/getting-started/configuration#workbench-configuration) documentation for further details.
