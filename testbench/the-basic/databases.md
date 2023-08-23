@@ -133,7 +133,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ### Using Database Transactions
 
-You may also utilise `DatabaseTransactions` for migrated state using the following:
+You may also utilize `DatabaseTransactions` for a migrated state using the following:
 
 ```php{1,5}
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -146,7 +146,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ::: details NOTES & CONSIDERATIONS
 
-* Your migration files has to suite Laravel's convention, e.g. `0000_00_00_000000_create_package_test_tables.php`.
+* Your migration files have to suite Laravel's convention, e.g. `0000_00_00_000000_create_package_test_tables.php`.
 * You may choose to put your migrations folder in `workbench/database/migrations`.
 * You may choose to change your test-migrations class name to be different from the published class names, e.g. from `CreateUsersTable` to `CreateUsersTestTable` or otherwise you may encounter composer class loader collision.
 :::
