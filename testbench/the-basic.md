@@ -48,7 +48,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Package Auto-Discovery
 
-By default Testbench doesn't enable any package discovery autoloading when running tests, however you can change this to ignore specific package using:
+By default Testbench doesn't enable any package discovery autoloading when running tests. However, you can change this to ignore specific packages using:
 
 ```php{8-11}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -65,7 +65,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-You may also enable auto discovery for all vendor packages using the following:
+You may also enable auto-discovery for all vendor packages using the following:
 
 ```php{8-11}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -82,7 +82,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-You can also enable auto discovery globally by setting the following property to your TestCase class:
+You can also enable auto-discovery globally by setting the following property to your TestCase class:
 
 ```php{8}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -98,7 +98,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ::: warning Root Package Discovery
 
-Be aware that root package doesn't automate using package discovery on any version below `v7.11.0` and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `php vendor/bin/testbench package:discover` command.
+Be aware that the root package doesn't automate using package discovery on any version below `v7.11.0` and you need to define it using [Package Service Providers](#package-service-providers) or registering it to the application using `php vendor/bin/testbench package:discover` command.
 :::
 
 ## Overriding Default Service Providers
@@ -200,7 +200,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Using Custom Laravel Skeleton
 
-By default Testbench provide a basic Laravel Skeleton. However, you can override the `applicationBasePath()` method from your TestCase class:
+By default, Testbench provides a basic Laravel Skeleton. However, you can override the `applicationBasePath()` method from your TestCase class:
 
 ```php{8-11}
 class TestCase extends \Orchestra\Testbench\TestCase 
@@ -219,7 +219,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ::: details FALLBACK METHOD
 
-The method was only introduced in `v6.22.0`, if you need to override Laravel Skeleton on project before the release then override `getBasePath` method instead:
+The method was only introduced in `v6.22.0`, if you need to override Laravel Skeleton on the project before the release then overrides `getBasePath` method instead:
 
 ```php
 class TestCase extends \Orchestra\Testbench\TestCase 
