@@ -1,6 +1,6 @@
 # Integrations
 
-Testbench hopes to provide a complete solution for package developments, in latest version we now support direct integrations with following 3rd party packages:
+Testbench hopes to provide a complete solution for package developments, in the latest version we now support direct integrations with the following 3rd party packages:
 
 ## Spatie Ray
 
@@ -45,13 +45,13 @@ You can configure Ray using `phpunit.xml`:
 
 ## Collision
 
-You can also utilise Collision with Testbench to use Laravel flavored artisan test command, including parallel testing. First of all include `nunomaduro/collision` to your package:
+You can also utilize Collision with Testbench to use Laravel-flavored artisan test commands, including parallel testing. First of all, include `nunomaduro/collision` in your package:
 
 ```bash
 composer require --dev "nunomaduro/collision"
 ```
 
-After installation complete and `package:discover` executed you should be able to use `package:test` command directly from `testbench` CLI:
+After installation is complete and `package:discover` is executed you should be able to use `package:test` command directly from `testbench` CLI:
 
 ```bash
 vendor/bin/testbench package:test
@@ -59,9 +59,9 @@ vendor/bin/testbench package:test
 
 ![Collision Example](./img/collision-example.gif)
 
-:::tip Support for Parallel Testing 
+::: tip Support for Parallel Testing 
 
-With `package:test` you are able to use `--parallel` options to use Parallel Testing. However do review [Laravel documentation](https://laravel.com/docs/8.x/testing#running-tests-in-parallel) regarding the subject.
+With `package:test` you are able to use `--parallel` options to use Parallel Testing. However, do review [Laravel documentation](https://laravel.com/docs/8.x/testing#running-tests-in-parallel) regarding the subject.
 :::
 
 ![Parallel Example](./img/parallel-example.gif)
