@@ -107,7 +107,7 @@ Using `WithWorkbench` will make `TestCase` uses `laravel` configuration value fr
 laravel: ./skeleton
 ```
 
-### Further reading
+## Further reading
 
 Before going through the rest of this documentation, please take some time to read the following documentation:
 
