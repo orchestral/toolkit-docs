@@ -1,6 +1,6 @@
 # Define Routes
 
-It is recommended for package to use define routes similar to Laravel such as `routes/web.php` etc. However if you have the requirement to define one or more routes just during test you can do so using the `defineRoutes()` method:
+It is recommended for a package to use defined routes similar to Laravel such as `routes/web.php` etc. However, if you have the requirement to define one or more routes just during the test you can do so using the `defineRoutes()` method:
 
 ```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -19,7 +19,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 ```
 ## Using Annotation
 
-You can also use `@define-route` annotation to customise use of `defineRoutes()` for specific test.
+You can also use `@define-route` annotation to customize the use of `defineRoutes()` for specific tests.
 
 ```php{9-12,16}
 class TestCase extends \Orchestra\Testbench\TestCase
