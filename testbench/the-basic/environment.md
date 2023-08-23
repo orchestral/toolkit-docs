@@ -1,12 +1,12 @@
 # Define Environment
 
-Testbench utilised `phpunit.xml` configuration and `TestCase` methods and properties to setup environment variables value as global value for every tests.
+Testbench utilized `phpunit.xml` configuration and `TestCase` methods and properties to setup environment variables values as global values for every test.
 
 [[toc]]
 
 ## `defineEnvironment()` Method
 
-If you need to add something early in the application bootstrapping process (which executed between registering service providers and booting service providers) you could use the `defineEnvironment()` method:
+If you need to add something early in the application bootstrapping process (which is executed between registering service providers and booting service providers) you could use the `defineEnvironment()` method:
 
 ```php{11-28}
 use Illuminate\Contracts\Config\Repository;
@@ -60,7 +60,7 @@ protected function getEnvironmentSetup($app)
 
 ## Using Annotation
 
-You can also use `@define-env` annotation to customise use of `defineEnvironment()` for specific test.
+You can also use `@define-env` annotation to customize the use of `defineEnvironment()` for specific tests.
 
 ```php{3-6,8-11,15,24}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -97,7 +97,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Application Key
 
-Most application would require `APP_KEY` to be defined in order to use encryption:
+Most applications would require `APP_KEY` to be defined in order to use encryption:
 
 ```xml{4}
 <phpunit>
@@ -108,7 +108,7 @@ Most application would require `APP_KEY` to be defined in order to use encryptio
 </phpunit>
 ```
 
-Alternatively, you can also explicitly setting it up under `defineEnvironment()`:
+Alternatively, you can also explicitly set it up under `defineEnvironment()`:
 
 ```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
@@ -128,13 +128,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Application Timezone
 
-You can also easily override application default timezone, instead of the default `"UTC"`:
+You can also easily override the application's default timezone, instead of the default `"UTC"`:
 
 ```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
 {
     /**
-     * Get application timezone.
+     * Get the application timezone.
      *
      * @param  \Illuminate\Foundation\Application  $app
      * @return string|null
@@ -148,7 +148,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Using `.env` Environment Variables
 
-By default Testbench will load `.env` file when booting the application if the file exist. You can change to completely ignores `.env` file by setting `TestCase::$loadEnvironmentVariables` property to `false`:
+By default, Testbench will load `.env` file when booting the application if the file exists. You can change to completely ignores `.env` file by setting `TestCase::$loadEnvironmentVariables` property to `false`:
 
 ```php{3}
 class TestCase extends \Orchestra\Testbench\TestCase
