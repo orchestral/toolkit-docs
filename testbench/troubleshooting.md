@@ -10,7 +10,7 @@ next: false
 
     RuntimeException: No supported encrypter found. The cipher and / or key length are invalid.
 
-This error would only occur if your test suite require usages of the encrypter. To solve this you can add a dummy `APP_KEY` or use a specific key to your application/package `phpunit.xml`.
+This error would only occur if your test suite requires the encrypter. To solve this you can add a dummy `APP_KEY` or use a specific key to your application/package `phpunit.xml`.
 
 ```xml
 <phpunit>
@@ -23,9 +23,9 @@ This error would only occur if your test suite require usages of the encrypter. 
 
 ## Why Testbench doesn't include any of the `App` classes.
 
-The reason Testbench remove all the classes is to make sure that you would never depends on it when developing Laravel Packages. Classes such as `App\Http\Controllers\Controller` and `App\User` are simple to be added but the problems with these classes is that it can be either:
+The reason Testbench remove all the classes is to make sure that you would never depend on it when developing Laravel Packages. Classes such as `App\Http\Controllers\Controller` and `App\User` are simple to be added but the problem with these classes is that they can be either:
 
-* Removed, moved to other location such as `App\Models\User`, or
+* Removed, moved to another location such as `App\Models\User`, or
 * Renamed using `php artisan app:name Acme` which would rename `App\User` to `Acme\User`.
 
 ## Class `GuzzleHttp\Client` not found
@@ -38,18 +38,18 @@ composer require "guzzlehttp/guzzle"
 
 ::: warning 
 
-We can't guarantee that any requirements in `laravel/laravel` will always be maintained as it is. Developer may remove any of the optional requirements such as `guzzlehttp/guzzle`, `fideloper/proxy`, `fruitcake/laravel-cors` or `laravel/tinker`.
+We can't guarantee that any requirements in `laravel/laravel` will always be maintained as it is. A developer may remove any of the optional requirements such as `guzzlehttp/guzzle`, `fideloper/proxy`, `fruitcake/laravel-cors` or `laravel/tinker`.
 :::
 
 ## Class `Illuminate\Database\Eloquent\Factory` not found
 
 Starting from Laravel 8, `Illuminate\Database\Eloquent\Factory` has been pushed to `laravel/legacy-factories` package in favor of class based Factories.
 
-As package developers, you have the options to either split the package version for Laravel 8 from previous Laravel version and use the new class based Factories or require `laravel/legacy-factories` to make release while supporting lower versions as well. In both cases the packages will needs to require PHP 7.3 and above.
+As package developers, you have the option to either split the package version for Laravel 8 from the previous Laravel version and use the new class-based Factories or require `laravel/legacy-factories` to make a release while supporting lower versions as well. In both cases, the packages will need to require PHP 7.3 and above.
 
 ::: tip
 
-The minimum PHP requirements is due to `laravel/legacy-factories` depending on `illuminate/macroable`.
+The minimum PHP requirements are due to `laravel/legacy-factories` depending on `illuminate/macroable`.
 :::
 
 In order to use legacy factories on packages development supporting Laravel 8 and below without splitting the release you can opt to use the following:
@@ -58,7 +58,7 @@ In order to use legacy factories on packages development supporting Laravel 8 an
 composer require --dev "laravel/legacy-factories:^1.0.4"
 ```
 
-Next you need to ensure `orchestra/testbench` uses the minimum version supporting `laravel/legacy-factories` to avoid issues on CI environment (if you're running tests on each version of Laravel or using `--prefer-lowest`).
+Next, you need to ensure `orchestra/testbench` uses the minimum version supporting `laravel/legacy-factories` to avoid issues on the CI environment (if you're running tests on each version of Laravel or using `--prefer-lowest`).
 
 | Laravel | Minimum Versions 
 |:--------|:---------------
@@ -81,7 +81,7 @@ E.g: If you need to support minimum Laravel 5.6 here how the requirement should 
 
 ### Converted to new class based factories but still facing this error
 
-You need to check all your TestCase and ensure that there is no call to `$this->withFactories()`, autoloading class based factories is handled by Composer and `withFactories()` is only needed for legacy based factories.
+You need to check all your TestCase and ensure that there is no call to `$this->withFactories()`, autoloading class-based factories are handled by Composer, and `withFactories()` is only needed for legacy-based factories.
 
 ## Missing Browser Kit support after testing on Laravel 5.4
 
