@@ -17,8 +17,16 @@ Before going through the rest of this documentation, please take some time to re
 To start using Packages Toolkit for Laravel you can first install the components:
 
 ```bash
-composer require --dev "orchestra/testbench" "orchestra/testbench-dusk"
+composer require --dev "orchestra/testbench"
 ```
+
+Alternatively, if you need to run Dusk tests on your Laravel package you should install the following dependency instead:
+
+```bash
+composer require --dev "orchestra/testbench-dusk"
+```
+
+### Setup
 
 Next, you can run the following command to scaffold your package with the recommended setup:
 
