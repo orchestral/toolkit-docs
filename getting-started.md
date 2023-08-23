@@ -85,5 +85,5 @@ Workbench provides a set of configurable actions and commands to allow previewin
  Laravel  | Workbench   
 :---------|:-----------
  8.x      | -
- 9.x      | 0.1.x
- 10.x     | 0.1.x
+ 9.x      | 0.2.x
+ 10.x     | 0.2.x
