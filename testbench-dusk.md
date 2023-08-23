@@ -5,7 +5,7 @@ next: false
 
 # Introduction
 
-Testbench simplifies the process to create feature and integration tests for your Laravel packages without massive configuration and build steps. 
+Testbench Dusk is built on top of Testbench to provide support running browser-based tests for your Laravel packages using [Laravel Dusk](https://laravel.com/docs/dusk).
 
 [[toc]]
 
