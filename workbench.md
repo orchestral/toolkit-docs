@@ -27,8 +27,8 @@ vendor/bin/testbench workbench:install
 
  Laravel  | Workbench   
 :---------|:-----------
- 9.x      | 0.1.x
- 10.x     | 0.1.x
+ 9.x      | 0.2.x
+ 10.x     | 0.2.x
 
 ## Configuration
 
