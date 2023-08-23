@@ -1,6 +1,6 @@
 # Configuration
 
-The Packages Toolkit for Laravel uses `testbench.yaml` as configuration file where you can define the following schemas to be used within `testbench` CLI or Workbench environment:
+The Packages Toolkit for Laravel uses `testbench.yaml` as a configuration file where you can define the following schemas to be used within `testbench` CLI or Workbench environment:
 
  Name            | Type      | Description
 :----------------|:----------|:--------------------
@@ -28,7 +28,7 @@ dont-discover:
 
 ### Laravel Skeleton
 
-You can use `laravel` configuration key to set custom location instead of using the default `vendor/orchestra/testbench-core/laravel`:
+You can use `laravel` configuration key to set a custom location instead of using the default `vendor/orchestra/testbench-core/laravel`:
 
 ```yaml
 provider: ./skeleton
@@ -68,7 +68,7 @@ The `env` environment variables is only applied when using the CLI and will not 
 
 ### Workbench Configuration
 
-You can use `workbench` configuration key to set to enables Workbench integration on your Laravel's packages.
+You can use `workbench` configuration key to set to enable Workbench integration on your Laravel packages.
 
  Name            | Type          | Description
 :----------------|:--------------|:--------------------
