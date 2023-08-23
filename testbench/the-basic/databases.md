@@ -1,6 +1,6 @@
 # Define Databases
 
-It is recommended for package to use `ServiceProvider::loadMigrationsFrom()` feature (it automatically handle migrations for packages when used in Laravel applications and during tests) or you can define migrations specifically for tests environment using the recommended guide below.
+It is recommended for a package to use `ServiceProvider::loadMigrationsFrom()` feature (it automatically handles migrations for packages when used in Laravel applications and during tests) or you can define migrations specifically for the tests environment using the recommended guide below.
 
 
 ## In-Memory SQLite Connection
@@ -16,7 +16,7 @@ To reduce setup configuration, you could use `testing` database connection (`:me
 </phpunit>
 ```
 
-Alternatively, you can also explicitly setting it up under `defineEnvironment()`:
+Alternatively, you can also explicitly set it up under `defineEnvironment()`:
 
 ```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
@@ -36,7 +36,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ## Automatically execute migrations
 
-By defaults you can use the `RefreshDatabase` trait to *only* run package migrations defined through the package's service provider.
+By default, you can use the `RefreshDatabase` trait to *only* run package migrations defined through the package's service provider.
 
 ```php{1,5}
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -51,7 +51,7 @@ If you also need to run the default Laravel migrations such as the `users` table
 
 ## Manually execute migrations
 
-Instead of just automatically migrate the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
+Instead of just automatically migrating the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
 
 ```php{1,10-17}
 use function Orchestra\Testbench\artisan;
@@ -76,7 +76,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 ### Run Laravel Migrations
 
-By default Testbench doesn't execute the default Laravel migrations which include `users` and `password_resets` table. In order to run the migration just add the following command:
+By default, Testbench doesn't execute the default Laravel migrations which include `users` and `password_resets` table. In order to run the migration just add the following command:
 
 ```php{10}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -93,7 +93,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-You can also set specific database connection to be used by adding `--database` options:
+You can also set specific database connections to be used by adding `--database` options:
 
 ```php{10}
 class TestCase extends \Orchestra\Testbench\TestCase
