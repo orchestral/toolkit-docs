@@ -31,7 +31,7 @@ dont-discover:
 You can use `laravel` configuration key to set a custom location instead of using the default `vendor/orchestra/testbench-core/laravel`:
 
 ```yaml
-provider: ./skeleton
+laravel: ./skeleton
 ```
 
 ### Service Providers
