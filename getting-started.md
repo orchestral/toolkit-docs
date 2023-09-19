@@ -44,9 +44,9 @@ Testbench simplifies the process to create feature and integration tests for you
 
  Laravel  | Testbench | Recommended Versions
 :---------|:----------|:----------
- 8.x      | 6.x       | `^6.32`
- 9.x      | 7.x       | `^7.29`
- 10.x     | 8.x       | `^8.9`
+ 8.x      | 6.x       | `^6.34`
+ 9.x      | 7.x       | `^7.31`
+ 10.x     | 8.x       | `^8.11`
 
 ### Testbench Dusk
 
@@ -80,9 +80,9 @@ Canvas replicates all of the `make` artisan commands available in your basic Lar
 
  Laravel  | Canvas   | Recommended Versions
 :---------|:---------|:----------
- 8.x      | 6.x      | `^6.11`
- 9.x      | 7.x      | `^7.6`
- 10.x     | 8.x      | `^8.5`
+ 8.x      | 6.x      | `^6.13`
+ 9.x      | 7.x      | `^7.7`
+ 10.x     | 8.x      | `^8.8`
 
 ### Workbench
 
@@ -93,5 +93,5 @@ Workbench provides a set of configurable actions and commands to allow previewin
  Laravel  | Workbench   
 :---------|:-----------
  8.x      | -
- 9.x      | 0.2.x
- 10.x     | 0.2.x
+ 9.x      | 0.3.x
+ 10.x     | 0.3.x
