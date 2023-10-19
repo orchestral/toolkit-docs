@@ -5,7 +5,9 @@ The Packages Toolkit for Laravel uses `testbench.yaml` as a configuration file w
  Name            | Type      | Description
 :----------------|:----------|:--------------------
  `laravel`       | `string`  | Set the path to Laravel skeleton.
- `providers`     | `array`   | Set of Service Provider classes to be loaded.
+ `providers`     | `array`   | List of Service Provider classes to be loaded.
+ `migrations`    | `array`   | List of migrations path.
+ `seeders`       | `array`   | List of seeder classes to execute during `migrate:fresh` or `migrate:refresh`.
  `dont-discover` | `array`   | List of packages to be ignored.
  `bootstrappers` | `array`   | Set of bootstrapper classes to be loaded.
  `env`           | `array`   | Set environment variables to be loaded under `testbench` CLI.
@@ -80,7 +82,7 @@ You can use `workbench` configuration key to set to enable Workbench integration
  `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command.
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
  `assets`        | `array`       | Set a collection of `tag` used in `vendor:publish` to be use with `asset-publish` recipe when running `workbench:build` command.
- `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route and `commands` route.
+ `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route, `commands` route and `views` route.
  
 #### Example
 
@@ -104,4 +106,5 @@ workbench:
     web: true
     api: false
     commands: false
+    views: true
 ```
