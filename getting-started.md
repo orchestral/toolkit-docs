@@ -92,8 +92,8 @@ Workbench provides a set of configurable actions and commands to allow previewin
 
 ##### Version Compatibility
 
- Laravel  | Workbench   
-:---------|:-----------
- 8.x      | -
- 9.x      | `^1.0`
- 10.x     | `^1.0`
+ Laravel  | Workbench | Recommended Versions
+:---------|:----------|:----------
+ 8.x      | -         | -
+ 9.x      | 1.x       | `^1.0`
+ 10.x     | 1.x       | `^1.0`
