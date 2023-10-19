@@ -5,7 +5,9 @@ The Packages Toolkit for Laravel uses `testbench.yaml` as a configuration file w
  Name            | Type      | Description
 :----------------|:----------|:--------------------
  `laravel`       | `string`  | Set the path to Laravel skeleton.
- `providers`     | `array`   | Set of Service Provider classes to be loaded.
+ `providers`     | `array`   | List of Service Provider classes to be loaded.
+ `migrations`    | `array`   | List of migrations path.
+ `seeders`       | `array`   | List of seeder classes to execute during `migrate:fresh` or `migrate:refresh`.
  `dont-discover` | `array`   | List of packages to be ignored.
  `bootstrappers` | `array`   | Set of bootstrapper classes to be loaded.
  `env`           | `array`   | Set environment variables to be loaded under `testbench` CLI.
