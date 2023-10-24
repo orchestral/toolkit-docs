@@ -82,7 +82,7 @@ You can use `workbench` configuration key to set to enable Workbench integration
  `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command.
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
  `assets`        | `array`       | Set a collection of `tag` used in `vendor:publish` to be use with `asset-publish` recipe when running `workbench:build` command.
- `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route and `commands` route.
+ `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route, `commands` route and `views` route.
  
 #### Example
 
@@ -106,4 +106,5 @@ workbench:
     web: true
     api: false
     commands: false
+    views: true
 ```
