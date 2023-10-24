@@ -2,7 +2,6 @@
 
 It is recommended for a package to use `ServiceProvider::loadMigrationsFrom()` feature (it automatically handles migrations for packages when used in Laravel applications and during tests) or you can define migrations specifically for the tests environment using the recommended guide below.
 
-
 ## In-Memory SQLite Connection
 
 To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) by defining it under PHPUnit Configuration File:
@@ -150,3 +149,4 @@ class TestCase extends \Orchestra\Testbench\TestCase
 * You may choose to put your migrations folder in `workbench/database/migrations`.
 * You may choose to change your test-migrations class name to be different from the published class names, e.g. from `CreateUsersTable` to `CreateUsersTestTable` or otherwise you may encounter composer class loader collision.
 :::
+

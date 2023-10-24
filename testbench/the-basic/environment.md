@@ -95,6 +95,44 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
+## Using Attribute
+
+You can also use `Orchestra\Testbench\Attributes\DefineEnvironment` attribute to customize the use of `defineEnvironment()` for specific tests.
+
+```php
+use Orchestra\Testbench\Attributes\DefineEnvironment;
+use PHPUnit\Framework\Attributes\Test;
+
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+    protected function usesMySqlConnection($app) 
+    {
+        $app['config']->set('database.default', 'mysql');
+    }
+
+    protected function usesSqliteConnection($app)
+    {
+        $app['config']->set('database.default', 'sqlite');
+    }
+
+    #[Test]
+    #[DefineEnvironment('usesMySqlConnection')]
+    public function it_can_be_connected_with_mysql()
+    {
+        // write your tests
+    }
+
+    /**
+     * @test
+     * @define-env usesSqliteConnection
+     */
+    public function it_can_be_connected_with_sqlite()
+    {
+        // write your tests
+    }
+}
+```
+
 ## Application Key
 
 Most applications would require `APP_KEY` to be defined in order to use encryption:
