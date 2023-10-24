@@ -73,6 +73,7 @@ Testbench Core provides the full testing API and CLI `testbench` binary which is
  8.x      | 6.x
  9.x      | 7.x
  10.x     | 8.x
+ 11.x     | 9.x
 
 ### Canvas
 
@@ -85,6 +86,7 @@ Canvas replicates all of the `make` artisan commands available in your basic Lar
  8.x      | 6.x      | `^6.10`
  9.x      | 7.x      | `^7.11`
  10.x     | 8.x      | `^8.11`
+ 11.x     | 9.x      | `^9.0`
 
 ### Workbench
 
