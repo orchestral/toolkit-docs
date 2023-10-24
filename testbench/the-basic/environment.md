@@ -99,7 +99,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also use `Orchestra\Testbench\Attributes\DefineEnvironment` attribute to customize the use of `defineEnvironment()` for specific tests.
 
-```php
+```php{1,6-9,11-14,17,24}
 use Orchestra\Testbench\Attributes\DefineEnvironment;
 use PHPUnit\Framework\Attributes\Test;
 
@@ -122,10 +122,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
         // write your tests
     }
 
-    /**
-     * @test
-     * @define-env usesSqliteConnection
-     */
+    #[Test]
+    #[DefineEnvironment('usesSqliteConnection')]
     public function it_can_be_connected_with_sqlite()
     {
         // write your tests
