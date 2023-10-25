@@ -1,6 +1,10 @@
 # Define Routes
 
-It is recommended for a package to use defined routes similar to Laravel such as `routes/web.php` etc. However, if you have the requirement to define one or more routes just during the test you can do so using the `defineRoutes()` method:
+It is recommended for a package to use defined routes similar to Laravel such as `routes/web.php` etc.
+
+## `defineRoute()` Method
+
+If you need to add something early in the application bootstrapping process (which is executed between registering service providers and booting service providers) you could use the `defineRoute()` method:
 
 ```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase
@@ -17,7 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     }
 }
 ```
-## Using Annotation
+### Using Annotation
 
 You can also use `@define-route` annotation to customize the use of `defineRoutes()` for specific tests.
 
@@ -39,6 +43,44 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @test
      * @define-route usesAuthRoutes
      */
+    public function it_does_load_auth_routes()
+    {
+        // 
+    }
+
+    /**
+     * @test
+     */
+    public function it_doesnt_load_auth_routes()
+    {
+        //
+    }
+}
+```
+
+### Using Attribute
+
+You can also use `Orchestra\Testbench\Attributes\DefineRoute` attribute to customize the use of `defineRoutes()` for specific tests.
+
+```php{12-15,18}
+use Orchestra\Testbench\Attributes\DefineRoute;
+use PHPUnit\Framework\Attributes\Test;
+
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+    /**
+     * Define routes setup.
+     *
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
+     */
+    protected function usesAuthRoutes($router) 
+    {
+        // Load auth routes.
+    }
+
+    #[Test]
+    #[DefineRoute('usesAuthRoutes')]
     public function it_does_load_auth_routes()
     {
         // 
