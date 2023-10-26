@@ -2,7 +2,7 @@
 
 It is recommended for a package to use defined routes similar to Laravel such as `routes/web.php` etc.
 
-## `defineRoute()` Method
+## `defineRoutes()` Method
 
 If you need to add something early in the application bootstrapping process (which is executed between registering service providers and booting service providers) you could use the `defineRoute()` method:
 

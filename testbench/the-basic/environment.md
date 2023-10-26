@@ -58,7 +58,7 @@ protected function getEnvironmentSetup($app)
 ```
 :::
 
-## Using Annotation
+### Using Annotation
 
 You can also use `@define-env` annotation to customize the use of `defineEnvironment()` for specific tests.
 
@@ -95,7 +95,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-## Using Attribute
+### Using Attribute
 
 You can also use `Orchestra\Testbench\Attributes\DefineEnvironment` attribute to customize the use of `defineEnvironment()` for specific tests.
 
