@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Packages Toolkit for Laravel"
-  text: 
+  text: '<iframe src="https://github.com/sponsors/crynobone/button" title="Sponsor crynobone" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>'
   tagline: "Documentation for Canvas, Testbench, and Workbench"
   actions:
     - theme: brand
@@ -24,4 +24,34 @@ features:
   - title: Workbench
     details: Workbench provides a set of configurable actions and commands to allow previewing, interacting, and serving your Laravel's packages during development
 ---
+
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    avatar: 'https://www.github.com/crynobone.png',
+    name: 'Mior Muhammad Zaki',
+    title: 'Creator',
+    links: [
+      { icon: 'github', link: 'https://github.com/crynobone' },
+      { icon: 'twitter', link: 'https://twitter.com/crynobone' }
+    ],
+    sponsor: 'https://github.com/sponsors/crynobone'
+  },
+]
+</script>
+
+<style scoped>
+.container {
+  margin: 0 auto;
+  max-width: 1152px;
+  padding-top: 10px;
+}
+
+</style>
+
+<br />
+
+<VPTeamMembers class="container" size="small" :members="members" />
 
