@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Packages Toolkit for Laravel"
-  text: '<iframe src="https://github.com/sponsors/crynobone/button" title="Sponsor crynobone" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>'
+  text: ''
   tagline: "Documentation for Canvas, Testbench, and Workbench"
   actions:
     - theme: brand
