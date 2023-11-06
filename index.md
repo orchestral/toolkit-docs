@@ -46,12 +46,11 @@ const members = [
 .container {
   margin: 0 auto;
   max-width: 1152px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 </style>
 
-<br />
-
-<VPTeamMembers class="container" size="small" :members="members" />
-
+<div class="container">
+  <VPTeamMembers size="medium" :members="members" />
+</div>
