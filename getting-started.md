@@ -97,5 +97,5 @@ Workbench provides a set of configurable actions and commands to allow previewin
  Laravel  | Workbench | Recommended Versions
 :---------|:----------|:----------
  8.x      | -         | -
- 9.x      | 1.x       | `^1.0`
- 10.x     | 1.x       | `^1.0`
+ 9.x      | 7.x       | `^7.0`
+ 10.x     | 8.x       | `^8.0`
