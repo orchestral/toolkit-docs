@@ -149,24 +149,6 @@ Most applications would require `APP_KEY` to be defined in order to use encrypti
 </phpunit>
 ```
 
-Alternatively, you can also explicitly set it up under `defineEnvironment()`:
-
-```php{9-12}
-class TestCase extends \Orchestra\Testbench\TestCase 
-{
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
-     */
-    protected function defineEnvironment($app)
-    {
-        $app['config']->set('app.key', 'AckfSECXIvnK5r28GVIWUAxmbBSjTsmF');
-    }
-}
-```
-
 ## Application Timezone
 
 You can also easily override the application's default timezone, instead of the default `"UTC"`:
