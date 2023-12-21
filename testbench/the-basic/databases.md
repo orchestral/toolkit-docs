@@ -15,7 +15,19 @@ To reduce setup configuration, you could use `testing` database connection (`:me
 </phpunit>
 ```
 
-Alternatively, you can also explicitly set it up under `defineEnvironment()`:
+Otherwise, you can also use `Orchestra\Testbench\Attributes\WithEnv` attribute:
+
+```php{1,3}
+use Orchestra\Testbench\Attributes\WithEnv;
+
+#[WithEnv('DB_CONNECTION', 'testing')]
+class TestCase extends \Orchestra\Testbench\TestCase 
+{
+    //
+}
+```
+
+Alternatively, you can also explicitly set it up under `defineEnvironment()`: 
 
 ```php{9-12}
 class TestCase extends \Orchestra\Testbench\TestCase 
@@ -30,6 +42,18 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         $app['config']->set('database.default', 'testing');
     }
+}
+```
+
+Lastly, you can also use `Orchestra\Testbench\Attributes\WithConfig` attribute:
+
+```php{1,3}
+use Orchestra\Testbench\Attributes\WithConfig;
+
+#[WithConfig('database.default', 'testing')]
+class TestCase extends \Orchestra\Testbench\TestCase 
+{
+    //
 }
 ```
 
@@ -77,35 +101,24 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default, Testbench doesn't execute the default Laravel migrations which include `users` and `password_resets` table. In order to run the migration just add the following command:
 
-```php{10}
+```php{1,3}
+use Orchestra\Testbench\Attributes\WithMigration;
+
+#[WithMigration]
 class TestCase extends \Orchestra\Testbench\TestCase
 {
-    /**
-     * Define database migrations.
-     *
-     * @return void
-     */
-    protected function defineDatabaseMigrations()
-    {
-        $this->loadLaravelMigrations();
-    }
+    //
 }
 ```
 
-You can also set specific database connections to be used by adding `--database` options:
+You can also run migrations for `cache`, `jobs`, `notifications` or `session` by providing additional paramters to `Orchestra\Testbench\Attributes\WithMigration` attribute:
 
-```php{10}
+```php{1-2}
+#[WithMigration('laravel', 'cache', 'job')]
+#[WithMigration('session')]
 class TestCase extends \Orchestra\Testbench\TestCase
 {
-    /**
-     * Define database migrations.
-     *
-     * @return void
-     */
-    protected function defineDatabaseMigrations()
-    {
-        $this->loadLaravelMigrations(['--database' => 'testbench']);
-    }
+    //
 }
 ```
 

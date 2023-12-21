@@ -58,43 +58,6 @@ protected function getEnvironmentSetup($app)
 ```
 :::
 
-### Using Annotation
-
-You can also use `@define-env` annotation to customize the use of `defineEnvironment()` for specific tests.
-
-```php{3-6,8-11,15,24}
-class TestCase extends \Orchestra\Testbench\TestCase
-{
-    protected function usesMySqlConnection($app) 
-    {
-        $app['config']->set('database.default', 'mysql');
-    }
-
-    protected function usesSqliteConnection($app)
-    {
-        $app['config']->set('database.default', 'sqlite');
-    }
-
-    /**
-     * @test
-     * @define-env usesMySqlConnection
-     */
-    public function it_can_be_connected_with_mysql()
-    {
-        // write your tests
-    }
-
-    /**
-     * @test
-     * @define-env usesSqliteConnection
-     */
-    public function it_can_be_connected_with_sqlite()
-    {
-        // write your tests
-    }
-}
-```
-
 ### Using Attribute
 
 You can also use `Orchestra\Testbench\Attributes\DefineEnvironment` attribute to customize the use of `defineEnvironment()` for specific tests.
@@ -124,6 +87,48 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     #[Test]
     #[DefineEnvironment('usesSqliteConnection')]
+    public function it_can_be_connected_with_sqlite()
+    {
+        // write your tests
+    }
+}
+```
+
+### Using Annotation
+
+::: warning Deprecated
+
+Annotation usage with PHPUnit has been mark as deprecated and will be removed in future versions.
+:::
+
+You can also use `@define-env` annotation to customize the use of `defineEnvironment()` for specific tests.
+
+```php{3-6,8-11,15,24}
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+    protected function usesMySqlConnection($app) 
+    {
+        $app['config']->set('database.default', 'mysql');
+    }
+
+    protected function usesSqliteConnection($app)
+    {
+        $app['config']->set('database.default', 'sqlite');
+    }
+
+    /**
+     * @test
+     * @define-env usesMySqlConnection
+     */
+    public function it_can_be_connected_with_mysql()
+    {
+        // write your tests
+    }
+
+    /**
+     * @test
+     * @define-env usesSqliteConnection
+     */
     public function it_can_be_connected_with_sqlite()
     {
         // write your tests
