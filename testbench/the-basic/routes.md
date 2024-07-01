@@ -6,8 +6,8 @@ It is recommended for a package to use defined routes similar to Laravel such as
 
 If you need to add something early in the application bootstrapping process (which is executed between registering service providers and booting service providers) you could use the `defineRoute()` method:
 
-```php{9-12}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Define routes setup.
@@ -15,10 +15,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function defineRoutes($router)
-    {
-        // Define routes.
-    }
+    protected function defineRoutes($router) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        // Define routes. # [!code hl]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -26,11 +26,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also use `Orchestra\Testbench\Attributes\DefineRoute` attribute to customize the use of `defineRoutes()` for specific tests.
 
-```php{12-15,18}
-use Orchestra\Testbench\Attributes\DefineRoute;
+```php
+use Orchestra\Testbench\Attributes\DefineRoute; # [!code ++] # [!code focus]
 use PHPUnit\Framework\Attributes\Test;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Define routes setup.
@@ -38,21 +38,19 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function usesAuthRoutes($router) 
+    protected function usesAuthRoutes($router) # [!code hl:4] # [!code focus] 
     {
         // Load auth routes.
     }
 
     #[Test]
-    #[DefineRoute('usesAuthRoutes')]
+    #[DefineRoute('usesAuthRoutes')] # [!code ++] # [!code focus]
     public function it_does_load_auth_routes()
     {
         // 
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_doesnt_load_auth_routes()
     {
         //
@@ -69,8 +67,8 @@ Annotation usage with PHPUnit has been mark as deprecated and will be removed in
 
 You can also use `@define-route` annotation to customize the use of `defineRoutes()` for specific tests.
 
-```php{9-12,16}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Define routes setup.
@@ -78,14 +76,14 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function usesAuthRoutes($router) 
+    protected function usesAuthRoutes($router) # [!code hl:4] # [!code focus] 
     {
         // Load auth routes.
     }
 
     /**
      * @test
-     * @define-route usesAuthRoutes
+     * @define-route usesAuthRoutes # [!code ++] # [!code focus]
      */
     public function it_does_load_auth_routes()
     {

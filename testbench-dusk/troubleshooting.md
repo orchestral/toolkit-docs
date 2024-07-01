@@ -28,7 +28,7 @@ The problem arises because migrations are loaded from both packages' "skeletons"
 
 Make sure all integration tests in your test suite use the same Laravel skeleton (the one from `testbench-dusk`), regardless of the base class, they extend by overriding `applicationBasePath()` in your test classes. Do the override in your base integration test class, or perhaps in a trait if you need it in multiple classes.
 
-```php{8-12}
+```php
 class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase 
 {
     /**
@@ -36,7 +36,7 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
      *
      * @return string
      */
-    public static function applicationBasePath()
+    public static function applicationBasePath() # [!code ++:5] # [!code focus:5]
     {
         // Adjust this path depending on where your override is located.
         return __DIR__.'/../vendor/orchestra/testbench-dusk/laravel'; 

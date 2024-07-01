@@ -7,13 +7,15 @@ Testbench hopes to provide a complete solution for package developments, in the 
 Starting from Testbench 6.10 you may now use Ray debugging tool directly when running tests. 
 
 ```php
-/** @test */
+use PHPUnit\Framework\Attributes\Test;
+
+#[Test]
 public function it_can_resolve_domain_route()
 {
     /** @var \Illuminate\Testing\TestResponse $response */
     $response = $this->get('http://api.localhost/hello');
 
-    ray($response);
+    ray($response); # [!code ++] # [!code focus]
 }
 ```
 
@@ -29,7 +31,7 @@ You can configure Ray using `phpunit.xml`:
     // ...
 
     <php>
-        <env name="RAY_ENABLED" value="(true)"/>
+        <env name="RAY_ENABLED" value="(true)"/> # [!code ++:9] # [!code focus:9]
         <env name="SEND_CACHE_TO_RAY" value="(false)"/>
         <env name="SEND_DUMPS_TO_RAY" value="(true)"/>
         <env name="SEND_JOBS_TO_RAY" value="(false)"/>

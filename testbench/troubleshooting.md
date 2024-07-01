@@ -16,7 +16,7 @@ This error would only occur if your test suite requires the encrypter. To solve 
 <phpunit>
     // ...
     <php>
-        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/> # [!code ++] # [!code focus]
     </php>
 </phpunit>
 ```

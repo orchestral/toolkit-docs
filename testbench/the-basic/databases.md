@@ -6,22 +6,22 @@ It is recommended for a package to use `ServiceProvider::loadMigrationsFrom()` f
 
 To reduce setup configuration, you could use `testing` database connection (`:memory:` with `sqlite` driver) by defining it under PHPUnit Configuration File:
 
-```xml{4}
+```xml
 <phpunit>
     // ...
     <php>
-        <env name="DB_CONNECTION" value="testing"/>
+        <env name="DB_CONNECTION" value="testing"/> # [!code ++] # [!code focus]
     </php>
 </phpunit>
 ```
 
 Otherwise, you can also use `Orchestra\Testbench\Attributes\WithEnv` attribute:
 
-```php{1,3}
-use Orchestra\Testbench\Attributes\WithEnv;
+```php
+use Orchestra\Testbench\Attributes\WithEnv; # [!code ++]
 
-#[WithEnv('DB_CONNECTION', 'testing')]
-class TestCase extends \Orchestra\Testbench\TestCase 
+#[WithEnv('DB_CONNECTION', 'testing')] # [!code ++] # [!code focus]
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     //
 }
@@ -29,8 +29,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 Alternatively, you can also explicitly set it up under `defineEnvironment()`: 
 
-```php{9-12}
-class TestCase extends \Orchestra\Testbench\TestCase 
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Define environment setup.
@@ -38,19 +38,19 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
-    protected function defineEnvironment($app)
-    {
-        $app['config']->set('database.default', 'testing');
-    }
+    protected function defineEnvironment($app) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        $app['config']->set('database.default', 'testing'); # [!code hl]
+    } # [!code ++] # [!code focus]
 }
 ```
 
 Lastly, you can also use `Orchestra\Testbench\Attributes\WithConfig` attribute:
 
 ```php{1,3}
-use Orchestra\Testbench\Attributes\WithConfig;
+use Orchestra\Testbench\Attributes\WithConfig; # [!code ++]
 
-#[WithConfig('database.default', 'testing')]
+#[WithConfig('database.default', 'testing')] # [!code ++] # [!code focus:2]
 class TestCase extends \Orchestra\Testbench\TestCase 
 {
     //
@@ -61,12 +61,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default, you can use the `RefreshDatabase` trait to *only* run package migrations defined through the package's service provider.
 
-```php{1,5}
-use Illuminate\Foundation\Testing\RefreshDatabase;
+```php
+use Illuminate\Foundation\Testing\RefreshDatabase; # [!code ++]
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
-    use RefreshDatabase;
+    use RefreshDatabase; # [!code ++] # [!code focus]
 }
 ```
 
@@ -76,24 +76,24 @@ If you also need to run the default Laravel migrations such as the `users` table
 
 Instead of just automatically migrating the database, you also manually configure migrations steps using the `defineDatabaseMigrations()` method:
 
-```php{1,10-17}
-use function Orchestra\Testbench\artisan;
+```php
+use function Orchestra\Testbench\artisan; # [!code hl]
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Define database migrations.
      *
      * @return void
      */
-    protected function defineDatabaseMigrations()
-    {
-        artisan($this, 'migrate', ['--database' => 'testbench']);
+    protected function defineDatabaseMigrations() # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        artisan($this, 'migrate', ['--database' => 'testbench']); # [!code hl:5]
 
         $this->beforeApplicationDestroyed(
             fn () => artisan($this, 'migrate:rollback', ['--database' => 'testbench'])
         );
-    }
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -101,10 +101,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default, Testbench doesn't execute the default Laravel migrations which include `users` and `password_resets` table. In order to run the migration just add the following command:
 
-```php{1,3}
-use Orchestra\Testbench\Attributes\WithMigration;
+```php
+use Orchestra\Testbench\Attributes\WithMigration; # [!code ++]
 
-#[WithMigration]
+#[WithMigration] # [!code ++] # [!code focus:2]
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     //
@@ -113,8 +113,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can also run migrations for `cache`, `jobs`, `notifications` or `session` by providing additional paramters to `Orchestra\Testbench\Attributes\WithMigration` attribute:
 
-```php{1-2}
-#[WithMigration('laravel', 'cache', 'job')]
+```php
+#[WithMigration('laravel', 'cache', 'job')] # [!code ++:2] # [!code focus:3]
 #[WithMigration('session')]
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -126,8 +126,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 To run migrations that are only used for testing purposes and not part of your package, add the following to your base test class:
 
-```php{1,12}
-use function Orchestra\Testbench\workbench_path;
+```php
+use function Orchestra\Testbench\workbench_path; # [!code hl]
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -136,10 +136,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
      *
      * @return void
      */
-    protected function defineDatabaseMigrations()
-    {
-        $this->loadMigrationsFrom(workbench_path('database/migrations'));
-    }
+    protected function defineDatabaseMigrations() # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        $this->loadMigrationsFrom( # [!code ++] # [!code focus]
+            workbench_path('database/migrations') # [!code hl]
+        ); # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -148,11 +150,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
 You may also utilize `DatabaseTransactions` for a migrated state using the following:
 
 ```php{1,5}
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\DatabaseTransactions; # [!code ++]
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
-    use DatabaseTransactions;
+    use DatabaseTransactions; # [!code ++] # [!code focus]
 }
 ```
 

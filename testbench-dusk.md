@@ -42,7 +42,8 @@ Please refer to [Configuration](/getting-started/configuration) documentation fo
 To use Testbench Dusk Component, all you need to do is extend `Orchestra\Testbench\Dusk\TestCase` instead of `PHPUnit\Framework\TestCase`. The fixture `app` booted by `Orchestra\Testbench\Dusk\TestCase` is predefined to follow the base application skeleton of Laravel.
 
 ```php{1}
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
+class DuskTestCase extends \PHPUnit\Framework\TestCase # [!code --]
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code ++] # [!code focus]
 {
     //
 }
@@ -52,9 +53,9 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 
 Browser tests can take a while to run, so you could also separate your test suite in your `phpunit.xml` file by providing different test suites, allowing you to run your Browser tests on demand.
 
-```xml{2-4}
+```xml
 <testsuites>
-    <testsuite name="Browser">
+    <testsuite name="Browser"> # [!code ++:3] # [!code focus:3]
         <directory suffix="Test.php">./tests/Browser</directory>
     </testsuite>
     <testsuite name="Feature">
@@ -80,12 +81,12 @@ Alternatively, you can also create a separate PHPUnit Configuration dedicated, w
 
 Testbench will use the configuration values defined in `testbench.yaml` and use its value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:
 
-```php{1,5}
-use Orchestra\Testbench\Concerns\WithWorkbench;
+```php
+use Orchestra\Testbench\Concerns\WithWorkbench; # [!code ++]
 
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase 
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
 {
-    use WithWorkbench;
+    use WithWorkbench; # [!code ++] # [!code focus]
 }
 ```
 

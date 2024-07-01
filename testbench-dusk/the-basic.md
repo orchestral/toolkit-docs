@@ -8,11 +8,12 @@ By default, Testbench Dusk will start its own PHP server at `http://127.0.0.1:80
 
 You can customize this by replacing the `$baseServeHost` and `$baseServePort` such as below:
 
-```php{3-4}
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase 
+```php
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
 {
-    protected static $baseServeHost = '127.0.0.1';
-    protected static $baseServePort = 9000;
+    protected static $baseServeHost = '127.0.0.1'; # [!code ++] # [!code focus]
+
+    protected static $baseServePort = 9000; # [!code ++] # [!code focus]
 }
 ```
 
@@ -20,7 +21,7 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 
 Dusk 3.5+ offers the ability to run Dusk tests without UI (the browser window), and this is the default and is normally slightly quicker. You can switch the behavior with the following calls:
 
-```php{4,7}
+```php
 use Orchestra\Testbench\Dusk\Options;
 
 // To show the UI during testing
@@ -38,8 +39,8 @@ By default, you can either use `sqlite`, `mysql`, `pgsql`, or `sqlsrv` with Test
 
 If you opt to use SQLite, you might want to set the default database connection to `sqlite` either using `phpunit` configuration or setting it up on `defineEnvironment()` method.
 
-```php{10-13}
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
+```php
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
 {
     /**
      * Define environment setup.
@@ -48,7 +49,7 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
      *
      * @return void
      */
-    protected function defineEnvironment($app)
+    protected function defineEnvironment($app) # [!code ++:4] # [!code focus:4]
     {
         $this->app['config']->set('database.default', 'sqlite');
     }
@@ -68,10 +69,10 @@ With Testbench Dusk, it executes a separate process to serve the application and
 
 As an example, sometimes you will want to make a minor change to the application for a single test such as changing a config item, etc. This is made possible by using the `beforeServingApplication` method on the test and passing in a closure to apply.
 
-```php{3-5}
+```php
 use Laravel\Dusk\Browser;
 
-$this->beforeServingApplication(function ($app, $config) {
+$this->beforeServingApplication(function ($app, $config) { # [!code ++:3] # [!code focus:4]
     $config->set('mail.default', 'log');
 });
 

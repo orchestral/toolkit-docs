@@ -6,8 +6,8 @@
 
 To load your package service provider, override the `getPackageProviders`.
 
-```php{9-14}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Get package providers.
@@ -15,12 +15,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return array<int, class-string<\Illuminate\Support\ServiceProvider>>
      */
-    protected function getPackageProviders($app)
-    {
-        return [
-            'Acme\AcmeServiceProvider',
-        ];
-    }
+    protected function getPackageProviders($app) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        return [ # [!code ++] # [!code focus]
+            'Acme\AcmeServiceProvider', # [!code hl]
+        ]; # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -28,8 +28,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 To load your package alias, override the `getPackageAliases`.
 
-```php{9-14}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Override application aliases.
@@ -37,12 +37,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return array<string, class-string<\Illuminate\Support\Facades\Facade>>
      */
-    protected function getPackageAliases($app)
-    {
-        return [
-            'Acme' => 'Acme\Facade',
-        ];
-    }
+    protected function getPackageAliases($app) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        return [ # [!code ++] # [!code focus]
+            'Acme' => 'Acme\Facade', # [!code hl]
+        ]; # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -50,49 +50,51 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default Testbench doesn't enable any package discovery autoloading when running tests. However, you can change this to ignore specific packages using:
 
-```php{8-11}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Ignore package discovery from.
      *
      * @return array<int, string>
      */
-    public function ignorePackageDiscoveriesFrom()
-    {
-        return ['laravel/passport'];
-    }
+    public function ignorePackageDiscoveriesFrom() # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        return [  # [!code ++] # [!code focus]
+            'laravel/passport', # [!code hl]
+        ]; # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
 You may also enable auto-discovery for all vendor packages using the following:
 
-```php{8-11}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Ignore package discovery from.
      *
      * @return array<int, string>
      */
-    public function ignorePackageDiscoveriesFrom()
-    {
-        return [];
-    }
+    public function ignorePackageDiscoveriesFrom() # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        return []; # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
 You can also enable auto-discovery globally by setting the following property to your TestCase class:
 
-```php{8}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Automatically enables package discoveries.
      *
      * @var bool
      */
-    protected $enablesPackageDiscoveries = true;
+    protected $enablesPackageDiscoveries = true; # [!code ++] # [!code focus]
 }
 ```
 
@@ -105,8 +107,8 @@ Be aware that the root package doesn't automate using package discovery on any v
 
 You can also override the default application using the following commands:
 
-```php{9-14}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Get package providers.
@@ -114,12 +116,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return array<class-string<\Illuminate\Support\ServiceProvider>, class-string<\Illuminate\Support\ServiceProvider>>
      */
-    protected function overrideApplicationBindings($app)
-    {
-        return [
-            'Illuminate\View\ViewServiceProvider' => 'Acme\ViewServiceProvider',
-        ];
-    }
+    protected function overrideApplicationBindings($app) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        return [ # [!code ++] # [!code focus]
+            'Illuminate\View\ViewServiceProvider' => 'Acme\ViewServiceProvider', # [!code hl]
+        ]; # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -129,14 +131,14 @@ class TestCase extends \Orchestra\Testbench\TestCase
 Since `Orchestra\Testbench\TestCase` replace Laravel's `Illuminate\Foundation\Testing\TestCase`, if you need your own `setUp()` implementation, do not forget to call `parent::setUp()` and make sure proper declaration compatibility:
 
 ```php
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Setup the test environment.
      */
-    protected function setUp(): void
-    {
-        // Code before application created.
+    protected function setUp(): void # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        // Code before application created. # [!code hl:10]
 
         $this->afterApplicationCreated(function () {
             // Code after application created.
@@ -146,8 +148,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
             // Code before application destroyed.
         });
 
-        parent::setUp();
-    }
+        parent::setUp(); # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -155,8 +157,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can easily swap Console Kernel for application bootstrap by overriding `resolveApplicationConsoleKernel()` method:
 
-```php{9-15}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Resolve application Console Kernel implementation.
@@ -164,13 +166,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
-    protected function resolveApplicationConsoleKernel($app)
-    {
-        $app->singleton(
-            'Illuminate\Contracts\Console\Kernel', 
-            'Tests\Console\Kernel'
-        );
-    }
+    protected function resolveApplicationConsoleKernel($app) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        $app->singleton( # [!code ++] # [!code focus]
+            'Illuminate\Contracts\Console\Kernel', # [!code ++] # [!code focus]
+            'Tests\Console\Kernel' # [!code hl]
+        ); # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -178,8 +180,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can easily swap HTTP Kernel for application bootstrap by overriding `resolveApplicationHttpKernel()` method:
 
-```php{9-15}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Resolve application HTTP Kernel implementation.
@@ -187,13 +189,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
-    protected function resolveApplicationHttpKernel($app)
-    {
-        $app->singleton(
-            'Illuminate\Contracts\Http\Kernel', 
-            'Tests\Http\Kernel'
-        );
-    }
+    protected function resolveApplicationHttpKernel($app) # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        $app->singleton( # [!code ++] # [!code focus]
+            'Illuminate\Contracts\Http\Kernel', # [!code ++] # [!code focus]
+            'Tests\Http\Kernel' # [!code hl]
+        ); # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -202,18 +204,18 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 By default, Testbench provides a basic Laravel Skeleton. However, you can override the `applicationBasePath()` method from your TestCase class:
 
-```php{8-11}
-class TestCase extends \Orchestra\Testbench\TestCase 
+```php
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
     /**
      * Get Application base path.
      *
      * @return string
      */
-    public static function applicationBasePath()
-    {
-        return __DIR__.'/../skeleton';
-    }
+    public static function applicationBasePath() # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        return __DIR__.'/../skeleton'; # [!code ++] # [!code focus]
+    } # [!code ++] # [!code focus]
 }
 ```
 
@@ -241,11 +243,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
 You can easily test blade components with Laravel's `Illuminate\Foundation\Testing\Concerns\InteractsWithViews` trait.
 
-```php{1,5}
-use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+```php
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews; # [!code ++]
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
-    use InteractsWithViews;
+    use InteractsWithViews; # [!code ++] # [!code focus]
 }
 ```

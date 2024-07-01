@@ -44,10 +44,10 @@ Testbench simplifies the process to create feature and integration tests for you
 
  Laravel  | Testbench | Recommended Versions
 :---------|:----------|:----------
- 8.x      | 6.x       | `^6.41`
- 9.x      | 7.x       | `^7.38`
- 10.x     | 8.x       | `^8.18`
- 11.x     | 9.x       | `^9.0`
+ 8.x      | 6.x       | `^6.44`
+ 9.x      | 7.x       | `^7.42`
+ 10.x     | 8.x       | `^8.23`
+ 11.x     | 9.x       | `^9.1`
 
 ### Testbench Dusk
 
@@ -57,10 +57,10 @@ Testbench Dusk is built on top of Testbench to provide support running browser-b
 
  Laravel  | Testbench Dusk | Recommended Versions
 :---------|:---------------|:----------
- 8.x      | 6.x            | `^6.42`
- 9.x      | 7.x            | `^7.37`
- 10.x     | 8.x            | `^8.18`
- 11.x     | 9.x            | `^9.0`
+ 8.x      | 6.x            | `^6.47`
+ 9.x      | 7.x            | `^7.43`
+ 10.x     | 8.x            | `^8.25`
+ 11.x     | 9.x            | `^9.3`
 
 ### Testbench Core
 
@@ -97,5 +97,6 @@ Workbench provides a set of configurable actions and commands to allow previewin
  Laravel  | Workbench | Recommended Versions
 :---------|:----------|:----------
  8.x      | -         | -
- 9.x      | 7.x       | `^7.2`
- 10.x     | 8.x       | `^8.2`
+ 9.x      | 7.x       | `^7.5`
+ 10.x     | 8.x       | `^8.5`
+ 11.x     | 9.x       | `^9.1`

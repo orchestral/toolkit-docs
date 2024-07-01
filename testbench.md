@@ -45,8 +45,9 @@ Please refer to [Configuration](/getting-started/configuration) documentation fo
 
 To use Testbench Component, all you need to do is extend `Orchestra\Testbench\TestCase` instead of `PHPUnit\Framework\TestCase`. The fixture `app` booted by `Orchestra\Testbench\TestCase` is predefined to follow the base application skeleton of Laravel.
 
-```php{1}
-class TestCase extends \Orchestra\Testbench\TestCase
+```php
+class TestCase extends \PHPUnit\Framework\TestCase # [!code --]
+class TestCase extends \Orchestra\Testbench\TestCase # [!code ++] # [!code focus]
 {
     //
 }
@@ -59,14 +60,14 @@ You can separate your tests in your `phpunit.xml` file by providing different te
 For example:
 
 ```xml
-<testsuites>
-    <testsuite name="Feature">
+<testsuites> # [!code focus]
+    <testsuite name="Feature"> # [!code ++:3] # [!code focus:3]
         <directory suffix="Test.php">./tests/Feature</directory>
     </testsuite>
     <testsuite name="Unit">
         <directory suffix="Test.php">./tests/Unit</directory>
     </testsuite>
-</testsuites>
+</testsuites> # [!code focus]
 ```
 
 Run only your feature tests by running PHPUnit with the `--testsuite=Feature` option.
@@ -79,12 +80,12 @@ vendor/bin/phpunit --testsuite=Feature
 
 Testbench will use the configuration values defined in `testbench.yaml` and use its value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:
 
-```php{1,5}
-use Orchestra\Testbench\Concerns\WithWorkbench;
+```php
+use Orchestra\Testbench\Concerns\WithWorkbench; # [!code ++]
 
-class TestCase extends \Orchestra\Testbench\TestCase 
+class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 {
-    use WithWorkbench;
+    use WithWorkbench; # [!code ++] # [!code focus]
 }
 ```
 
