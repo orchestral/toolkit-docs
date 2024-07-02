@@ -19,19 +19,30 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
 
 ## Running with or without UI
 
-Dusk 3.5+ offers the ability to run Dusk tests without UI (the browser window), and this is the default and is normally slightly quicker. You can switch the behavior with the following calls:
+Dusk offers the ability to run Dusk tests without UI (the browser window), and this is the default and is normally slightly quicker. You can switch the behavior with the following calls:
 
 ```php
-use Orchestra\Testbench\Dusk\Options;
+use Orchestra\Testbench\Dusk\Options; # [!code ++]
 
-// To show the UI during testing
-Options::withUI();
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
+{
+    /**
+     * Prepare the testing environment web driver options.
+     *
+     * @api
+     *
+     * @return void
+     */
+    public static function defineWebDriverOptions() # [!code ++] # [!code focus]
+    { # [!code ++] # [!code focus]
+        // To show the UI during testing
+        Options::withUI(); # [!code hl]
 
-// To hide the UI during testing
-Options::withoutUI();
+        // To hide the UI during testing
+        Options::withoutUI(); # [!code hl]
+    } # [!code ++] # [!code focus]
+}
 ```
-
-We recommend you place this in a `tests/bootstrap.php` file, similar to this package's own test setup, and use this for PHPUnit.
 
 ## Supported Database
 
