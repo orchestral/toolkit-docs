@@ -11,7 +11,7 @@ If you need to add something early in the application bootstrapping process (whi
 ```php
 use Illuminate\Contracts\Config\Repository; # [!code hl]
 
-class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
+class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
      * Define environment setup.
@@ -19,9 +19,9 @@ class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
      * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
-    protected function defineEnvironment($app) # [!code ++] # [!code focus]
-    { # [!code ++] # [!code focus]
-        // Setup default database to use sqlite :memory: # [!code hl:15]
+    protected function defineEnvironment($app) # [!code ++:18] # [!code focus:18]
+    {
+        // Setup default database to use sqlite :memory:
         tap($app['config'], function (Repository $config) { 
             $config->set('database.default', 'testbench'); 
             $config->set('database.connections.testbench', [ 
@@ -36,7 +36,7 @@ class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
                 'queue.failed.database' => 'testbench', 
             ]); 
         });
-    } # [!code ++] # [!code focus]
+    }
 }
 ```
 
@@ -66,14 +66,14 @@ You can also use `Orchestra\Testbench\Attributes\DefineEnvironment` attribute to
 use Orchestra\Testbench\Attributes\DefineEnvironment; # [!code ++] # [!code focus]
 use PHPUnit\Framework\Attributes\Test;
 
-class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
+class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function usesMySqlConnection($app) # [!code hl:4] # [!code focus]
+    protected function usesMySqlConnection($app) # [!code hl:4] # [!code focus:4]
     {
         $app['config']->set('database.default', 'mysql');
     }
 
-    protected function usesSqliteConnection($app) # [!code hl:4] # [!code focus]
+    protected function usesSqliteConnection($app) # [!code hl:4] # [!code focus:4]
     {
         $app['config']->set('database.default', 'sqlite');
     }
@@ -104,14 +104,14 @@ Annotation usage with PHPUnit has been mark as deprecated and will be removed in
 You can also use `@define-env` annotation to customize the use of `defineEnvironment()` for specific tests.
 
 ```php
-class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
+class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function usesMySqlConnection($app) # [!code hl:4] # [!code focus] 
+    protected function usesMySqlConnection($app) # [!code hl:4] # [!code focus:4] 
     {
         $app['config']->set('database.default', 'mysql');
     }
 
-    protected function usesSqliteConnection($app) # [!code hl:4] # [!code focus] 
+    protected function usesSqliteConnection($app) # [!code hl:4] # [!code focus:4] 
     {
         $app['config']->set('database.default', 'sqlite');
     }
@@ -154,7 +154,7 @@ Most applications would require `APP_KEY` to be defined in order to use encrypti
 You can also easily override the application's default timezone, instead of the default `"UTC"`:
 
 ```php
-class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
+class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
      * Get the application timezone.
@@ -162,10 +162,10 @@ class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
      * @param  \Illuminate\Foundation\Application  $app
      * @return string|null
      */
-    protected function getApplicationTimezone($app) # [!code ++] # [!code focus]
-    { # [!code ++] # [!code focus]
-        return 'Asia/Kuala_Lumpur'; # [!code hl]
-    } # [!code ++] # [!code focus]
+    protected function getApplicationTimezone($app) # [!code ++:4] # [!code focus:4]
+    {
+        return 'Asia/Kuala_Lumpur';
+    }
 }
 ```
 
@@ -174,9 +174,14 @@ class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
 By default, Testbench will load `.env` file when booting the application if the file exists. You can change to completely ignores `.env` file by setting `TestCase::$loadEnvironmentVariables` property to `false`:
 
 ```php
-class TestCase extends \Orchestra\Testbench\TestCase # [!code focus:3]
-{
-    protected $loadEnvironmentVariables = false; # [!code ++]
+class TestCase extends \Orchestra\Testbench\TestCase
+{    
+    /**
+     * Automatically loads environment file if available.
+     *
+     * @var bool
+     */
+    protected $loadEnvironmentVariables = false; # [!code ++] # [!code focus]
 
     // 
 }  

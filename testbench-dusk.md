@@ -82,9 +82,9 @@ Alternatively, you can also create a separate PHPUnit Configuration dedicated, w
 Testbench will use the configuration values defined in `testbench.yaml` and use its value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:
 
 ```php
-use Orchestra\Testbench\Concerns\WithWorkbench; # [!code ++]
+use Orchestra\Testbench\Concerns\WithWorkbench; # [!code ++] # [!code focus]
 
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
     use WithWorkbench; # [!code ++] # [!code focus]
 }

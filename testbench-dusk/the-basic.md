@@ -9,10 +9,20 @@ By default, Testbench Dusk will start its own PHP server at `http://127.0.0.1:80
 You can customize this by replacing the `$baseServeHost` and `$baseServePort` such as below:
 
 ```php
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
+    /**
+     * The base serve host URL to use while testing the application.
+     *
+     * @var string
+     */
     protected static $baseServeHost = '127.0.0.1'; # [!code ++] # [!code focus]
 
+    /**
+     * The base serve port to use while testing the application.
+     *
+     * @var int
+     */
     protected static $baseServePort = 9000; # [!code ++] # [!code focus]
 }
 ```
@@ -24,7 +34,7 @@ Dusk offers the ability to run Dusk tests without UI (the browser window), and t
 ```php
 use Orchestra\Testbench\Dusk\Options; # [!code ++]
 
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
     /**
      * Prepare the testing environment web driver options.
@@ -33,14 +43,14 @@ class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
      *
      * @return void
      */
-    public static function defineWebDriverOptions() # [!code ++] # [!code focus]
-    { # [!code ++] # [!code focus]
+    public static function defineWebDriverOptions() # [!code ++:8] # [!code focus:8]
+    {
         // To show the UI during testing
-        Options::withUI(); # [!code hl]
+        Options::withUI();
 
         // To hide the UI during testing
-        Options::withoutUI(); # [!code hl]
-    } # [!code ++] # [!code focus]
+        Options::withoutUI();
+    }
 }
 ```
 
@@ -51,7 +61,7 @@ By default, you can either use `sqlite`, `mysql`, `pgsql`, or `sqlsrv` with Test
 If you opt to use SQLite, you might want to set the default database connection to `sqlite` either using `phpunit` configuration or setting it up on `defineEnvironment()` method.
 
 ```php
-class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase # [!code focus]
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
     /**
      * Define environment setup.
@@ -82,12 +92,19 @@ As an example, sometimes you will want to make a minor change to the application
 
 ```php
 use Laravel\Dusk\Browser;
+use PHPUnit\Framework\Attributes\Test;
 
-$this->beforeServingApplication(function ($app, $config) { # [!code ++:3] # [!code focus:4]
-    $config->set('mail.default', 'log');
-});
+// ...
 
-$this->browse(function (Browser $browser) {
+#[Test]
+public function it_can_send_email()
+{
+    $this->beforeServingApplication(function ($app, $config) { # [!code ++:3] # [!code focus:4]
+        $config->set('mail.default', 'log');
+    });
 
-});
+    $this->browse(function (Browser $browser) {
+
+    });
+}
 ```

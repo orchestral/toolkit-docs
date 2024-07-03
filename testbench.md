@@ -81,9 +81,9 @@ vendor/bin/phpunit --testsuite=Feature
 Testbench will use the configuration values defined in `testbench.yaml` and use its value when the `TestCase` class uses `Orchestra\Testbench\Concerns\WithWorkbench` trait:
 
 ```php
-use Orchestra\Testbench\Concerns\WithWorkbench; # [!code ++]
+use Orchestra\Testbench\Concerns\WithWorkbench; # [!code ++] # [!code focus]
 
-class TestCase extends \Orchestra\Testbench\TestCase # [!code focus]
+class TestCase extends \Orchestra\Testbench\TestCase
 {
     use WithWorkbench; # [!code ++] # [!code focus]
 }
