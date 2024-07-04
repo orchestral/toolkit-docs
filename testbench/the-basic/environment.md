@@ -9,7 +9,7 @@ Testbench utilized `phpunit.xml` configuration and `TestCase` methods and proper
 If you need to add something early in the application bootstrapping process (which is executed between registering service providers and booting service providers) you could use the `defineEnvironment()` method:
 
 ```php
-use Illuminate\Contracts\Config\Repository; # [!code hl]
+use Illuminate\Contracts\Config\Repository; # [!code ++]
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
