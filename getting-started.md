@@ -44,10 +44,10 @@ Testbench simplifies the process to create feature and integration tests for you
 
  Laravel  | Testbench | Recommended Versions
 :---------|:----------|:----------
- 8.x      | 6.x       | `^6.44`
- 9.x      | 7.x       | `^7.42`
- 10.x     | 8.x       | `^8.23`
- 11.x     | 9.x       | `^9.1`
+ 8.x      | 6.x       | `^6.45`
+ 9.x      | 7.x       | `^7.43`
+ 10.x     | 8.x       | `^8.24`
+ 11.x     | 9.x       | `^9.2`
 
 ### Testbench Dusk
 
@@ -57,10 +57,10 @@ Testbench Dusk is built on top of Testbench to provide support running browser-b
 
  Laravel  | Testbench Dusk | Recommended Versions
 :---------|:---------------|:----------
- 8.x      | 6.x            | `^6.47`
- 9.x      | 7.x            | `^7.43`
+ 8.x      | 6.x            | `^6.48`
+ 9.x      | 7.x            | `^7.44`
  10.x     | 8.x            | `^8.25`
- 11.x     | 9.x            | `^9.3`
+ 11.x     | 9.x            | `^9.4`
 
 ### Testbench Core
 
