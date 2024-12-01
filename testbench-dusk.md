@@ -32,6 +32,7 @@ vendor/bin/testbench workbench:install
  8.x      | 6.x
  9.x      | 7.x
  10.x     | 8.x
+ 11.x     | 9.x
 
 ## Configuration
 
