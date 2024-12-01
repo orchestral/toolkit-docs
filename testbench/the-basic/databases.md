@@ -111,12 +111,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
 }
 ```
 
-You can also run migrations for `cache`, `jobs`, `notifications` or `session` by providing additional paramters to `Orchestra\Testbench\Attributes\WithMigration` attribute:
+You can also run migrations for `cache`, `queue`, `notifications` or `session` by providing additional paramters to `Orchestra\Testbench\Attributes\WithMigration` attribute:
 
 ```php
 use Orchestra\Testbench\Attributes\WithMigration; 
 
-#[WithMigration('laravel', 'cache', 'job')] # [!code ++:2] # [!code focus:2]
+#[WithMigration('laravel', 'cache', 'queue')] # [!code ++:2] # [!code focus:2]
 #[WithMigration('session')]
 class TestCase extends \Orchestra\Testbench\TestCase
 {
