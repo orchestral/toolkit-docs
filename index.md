@@ -48,7 +48,6 @@ const members = [
   max-width: 1152px;
   padding-top: 20px;
 }
-
 </style>
 
 <div class="container">
