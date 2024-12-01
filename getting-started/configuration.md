@@ -78,6 +78,7 @@ You can use `workbench` configuration key to set to enable Workbench integration
  `install`       | `bool`        | Run Laravel default migrations. 
  `start`         | `string`      | Set the default route when opening `/` path via `serve` command.
  `user`          | `string\|int` | Set the user ID or email to automatically logged-in when accessing `/` via `serve` command (only when accessing as a guest).
+ `auth`          | `bool`        | Determine if Workbench should generate authentication routes using Laravel Breeze (default: `false`)
  `guard`         | `string`      | Set the default Auth Guard to automatically authenticate `user` value.
  `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command.
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
