@@ -34,3 +34,15 @@ vendor/bin/testbench workbench:install
 ## Configuration
 
 Please refer to [Configuration](/getting-started/configuration#workbench-configuration) documentation for further details.
+
+## Getting Started 
+
+Workbench provides helpers on top of Testbench to allow package developers to interacts and preview Laravel packages without having the need to require it in a Laravel application. 
+
+### `serve` Command
+
+Similar to `composer run dev` available in latest Laravel application, you can preview the configured package using the following command:
+
+```bash
+composer run serve
+```
