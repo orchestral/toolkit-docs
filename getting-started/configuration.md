@@ -80,7 +80,7 @@ You can use `workbench` configuration key to set to enable Workbench integration
  `user`          | `string\|int` | Set the user ID or email to automatically logged-in when accessing `/` via `serve` command (only when accessing as a guest).
  `auth`          | `bool`        | Determine if Workbench should generate authentication routes using Laravel Breeze (default: `false`)
  `guard`         | `string`      | Set the default Auth Guard to automatically authenticate `user` value.
- `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command.
+ `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command. Set `reserve: true` will create symlink from skeleton to destination path instead of from path to skeleton.
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
  `assets`        | `array`       | Set a collection of `tag` used in `vendor:publish` to be use with `asset-publish` recipe when running `workbench:build` command.
  `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route, `commands` route and `views` route.
@@ -95,8 +95,11 @@ workbench:
   user: taylor@laravel.com
   guard: web
   sync:
-    - from: ./public/
+    - from: public
       to: public/vendor/nova
+    - from: storage
+      to: workbench/storage
+      reverse: true
   build:
     - asset-publish
     - create-sqlite-db
