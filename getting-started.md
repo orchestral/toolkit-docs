@@ -58,9 +58,9 @@ Testbench Dusk is built on top of Testbench to provide support running browser-b
  Laravel  | Testbench Dusk | Recommended Versions
 :---------|:---------------|:----------
  8.x      | 6.x            | `^6.50`
- 9.x      | 7.x            | `^7.50`
- 10.x     | 8.x            | `^8.32`
- 11.x     | 9.x            | `^9.10`
+ 9.x      | 7.x            | `^7.51`
+ 10.x     | 8.x            | `^8.33`
+ 11.x     | 9.x            | `^9.11`
 
 ### Testbench Core
 
