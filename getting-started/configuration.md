@@ -18,7 +18,7 @@ The Packages Toolkit for Laravel uses `testbench.yaml` as a configuration file w
 
 ## Basic Usages
 
-In order for the `testbench` command to understand any required service providers, bootstrappers, environment variables or other options to be used when executing the "artisan" command you need to add the following `testbench.yaml` file on the project root directory.
+For the `testbench` command to understand any required service providers, bootstrappers, environment variables or other options to be used when executing the "artisan" command you need to add the following `testbench.yaml` file on the project root directory.
 
 ```yaml
 providers:
@@ -65,12 +65,12 @@ env:
 ```
 
 ::: warning `env` limitation
-The `env` environment variables is only applied when using the CLI and will not be used when running tests.
+The `env` environment variables are only applied when using the CLI and will not be used when running tests.
 :::
 
 ### Workbench Configuration
 
-You can use `workbench` configuration key to set to enable Workbench integration on your Laravel packages.
+You can use `workbench` configuration key to enable Workbench integration on your Laravel packages.
 
  Name            | Type          | Description
 :----------------|:--------------|:--------------------
@@ -84,6 +84,19 @@ You can use `workbench` configuration key to set to enable Workbench integration
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
  `assets`        | `array`       | Set a collection of `tag` used in `vendor:publish` to be use with `asset-publish` recipe when running `workbench:build` command.
  `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route, `commands` route and `views` route.
+
+#### Workbench Discovery Configuration
+
+The `discovers` configuration allows Workbench to discover routes, model factories, and views.
+
+ Name            | Type          | Description
+:----------------|:--------------|:--------------------
+ `config`        | `bool`        | Enabling the option allows Workbench to load configuration from `workbench/config` directory.
+ `factories`     | `bool`        | Enabling the options allows Workbench to map Eloquent Models from `workbench/app/Models` directory to `workbench/database/factories`.
+ `web`           | `bool`        | Enabling the options allows Workbench to register routes from `workbench/routes/web.php`
+ `api`           | `bool`        | Enabling the options allows Workbench to register routes from `workbench/routes/api.php`
+ `commands`           | `bool`        | Enabling the options allows Workbench to register console commands from `workbench/routes/console.php`
+
  
 #### Example
 
