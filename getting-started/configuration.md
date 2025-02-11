@@ -12,7 +12,7 @@ The Packages Toolkit for Laravel uses `testbench.yaml` as a configuration file w
  `bootstrappers` | `array`   | Set of bootstrapper classes to be loaded.
  `env`           | `array`   | Set environment variables to be loaded under `testbench` CLI.
  `purge`         | `array`   | Configurable `files` and `directories` to be pruned via `package:purge-skeleton` command.
- `workbench`     | Object    | See [Workbench configuration](#workbench-configuration) for detail.
+ `workbench`     | Object    | See [Workbench configuration](#workbench-configuration) for details.
 
  [[toc]]
 
@@ -83,7 +83,7 @@ You can use `workbench` configuration key to enable Workbench integration on you
  `sync`          | `array`       | Set a collection to create symlink between `from` and `to` value via `serve` command. Set `reserve: true` will create symlink from skeleton to destination path instead of from path to skeleton.
  `build`         | `array`       | Set a collection of build recipes or command to be execute when running `workbench:build` command.
  `assets`        | `array`       | Set a collection of `tag` used in `vendor:publish` to be use with `asset-publish` recipe when running `workbench:build` command.
- `discovers`     | `array`       | Support setting `boolean` to enable `web` route, `api` route, `commands` route and `views` route.
+ `discovers`     | `array`       | See [Workbench Discovery Configuration](#workbench-discovery-configuration) for details.
 
 #### Workbench Discovery Configuration
 
