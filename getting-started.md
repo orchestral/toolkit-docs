@@ -38,7 +38,7 @@ vendor/bin/testbench workbench:install
 
 ### Testbench
 
-Testbench simplifies the process to create feature and integration tests for your Laravel packages without massive configuration and build steps. 
+Testbench simplifies the process of creating feature and integration tests for your Laravel packages without massive configuration and build steps. 
 
 ##### Version Compatibility
 
