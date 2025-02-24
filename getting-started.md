@@ -48,6 +48,7 @@ Testbench simplifies the process of creating feature and integration tests for y
  9.x      | 7.x       | `^7.50`
  10.x     | 8.x       | `^8.31`
  11.x     | 9.x       | `^9.9`
+ 12.x     | 10.x      | `^10.0`
 
 ### Testbench Dusk
 
@@ -61,6 +62,7 @@ Testbench Dusk is built on top of Testbench to provide support running browser-b
  9.x      | 7.x            | `^7.51`
  10.x     | 8.x            | `^8.33`
  11.x     | 9.x            | `^9.11`
+ 12.x     | 10.x           | `^10.0`
 
 ### Testbench Core
 
@@ -74,6 +76,7 @@ Testbench Core provides the full testing API and CLI `testbench` binary which is
  9.x      | 7.x
  10.x     | 8.x
  11.x     | 9.x
+ 12.x     | 10.x
 
 ### Canvas
 
@@ -87,6 +90,7 @@ Canvas replicates all of the `make` artisan commands available in your basic Lar
  9.x      | 7.x      | `^7.12`
  10.x     | 8.x      | `^8.12`
  11.x     | 9.x      | `^9.2`
+ 12.x     | 10.x     | `^10.0`
 
 ### Workbench
 

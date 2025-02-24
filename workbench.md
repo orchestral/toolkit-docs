@@ -30,12 +30,13 @@ vendor/bin/testbench workbench:install
  9.x      | 7.x
  10.x     | 8.x
  11.x     | 9.x
+ 12.x     | 10.x
 
 ## Configuration
 
 Please refer to [Configuration](/getting-started/configuration#workbench-configuration) documentation for further details.
 
-## Getting Started 
+## Getting Started
 
 Workbench provides helpers on top of Testbench to allow package developers to interacts and preview Laravel packages without having the need to require it in a Laravel application. 
 
